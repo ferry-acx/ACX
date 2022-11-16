@@ -1,0 +1,573 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@400;500&display=swap");
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+.layout__menu {
+    font-weight: 700;
+    color: hsl(207deg, 71%, 53%);
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+}
+.layout__menu:hover {
+    color: hsl(230deg, 87%, 61%);
+    text-decoration: none;
+}
+
+.login {
+    height: 32.5rem;
+    width: auto;
+    background-image: url("../images/desktop-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
+}
+.login__grid {
+    display: grid;
+}
+.login__item {
+    display: flex;
+    flex-direction: row wrap;
+    margin: auto;
+    padding: 3.125rem 0rem;
+}
+.login__image {
+    position: absolute center;
+    margin-left: -5.25rem;
+    animation: float 6s ease-in-out infinite;
+}
+.login__title {
+    height: 10.3125rem;
+    width: 16.25rem;
+    margin-top: auto;
+}
+.login__title h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.login__recover {
+    color: hsl(223deg, 14%, 60%);
+}
+.login__input {
+    margin: auto;
+    margin-left: -4rem;
+    width: 18.125rem;
+}
+.login__input input {
+    background-color: #fff;
+    border: none;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calendar {
+    height: max-content;
+    width: max-content;
+    background-color: var(--bg-main);
+    border-radius: 30px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    /* transform: scale(1.25); */
+}
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-txt);
+    padding: 10px;
+}
+.calendar-body {
+    padding: 10px;
+}
+.calendar-week-day {
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+}
+.calendar-week-day div {
+    display: grid;
+    place-items: center;
+    color: var(--gray);
+}
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    color: var(--blue);
+}
+.calendar-days div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: default;
+    animation: to-top 1s forwards;
+}
+.calendar-days div.curr-date,
+.calendar-days div.curr-date:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 50%;
+}
+.calendar-days div.curr-date span {
+    display: none;
+}
+.calendar-days div span {
+    position: absolute;
+}
+.calendar-days div span:nth-child(1),
+.calendar-days div span:nth-child(3) {
+    width: 2px;
+    height: 0;
+    background-color: var(--color-txt);
+}
+.calendar-days div span:nth-child(2),
+.calendar-days div span:nth-child(4) {
+    width: 0;
+    height: 2px;
+    background-color: var(--color-txt);
+}
+.calendar-days div span:nth-child(1) {
+    bottom: 0;
+    left: 0;
+}
+.calendar-days div span:nth-child(2) {
+    top: 0;
+    left: 0;
+}
+.calendar-days div span:nth-child(3) {
+    top: 0;
+    right: 0;
+}
+.calendar-days div span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+.calendar-days div:hover span {
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+.calendar-days div:hover span:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.calendar-days div:hover span:nth-child(3) {
+    transition-delay: 0.4s;
+}
+.calendar-days div:hover span:nth-child(4) {
+    transition-delay: 0.6s;
+}
+.calendar-days div:hover span:nth-child(2),
+.calendar-days div:hover span:nth-child(4) {
+    width: 100%;
+}
+.calendar-days div:hover span:nth-child(1),
+.calendar-days div:hover span:nth-child(3) {
+    height: 100%;
+}
+.calendar-days.month-picker {
+    padding: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.light .calendar {
+    box-shadow: var(--shadow);
+}
+
+.month-picker:hover {
+    background-color: var(--color-hover);
+}
+
+.month-picker {
+    display: flex;
+    align-items: center;
+    padding-right: 0.3125rem;
+}
+
+.month-change {
+    height: 40px;
+    width: 20px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.month-change pre {
+    margin-bottom: 5px;
+}
+.month-change:hover {
+    background-color: var(--color-hover);
+}
+
+.calendar-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.toggle {
+    display: flex;
+}
+
+.toggle span {
+    margin-right: 10px;
+    color: var(--color-txt);
+}
+
+.month-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-main);
+    padding: 20px;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    display: grid;
+    transform: scale(1.5);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.month-list.show {
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: visible;
+    transition: all 0.2s ease-in-out;
+}
+
+.month-list > div {
+    display: grid;
+    place-items: center;
+}
+
+.month-list > div > div {
+    width: 100%;
+    padding: 5px 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-txt);
+}
+
+.month-list > div > div:hover {
+    background-color: var(--color-hover);
+}
+
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.user__dashboard {
+    height: auto;
+    width: auto;
+    background-image: url("../images/dashboard-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
+}
+.user__dashboard__grid {
+    display: grid;
+    justify-content: center;
+}
+.user__dashboard__item {
+    display: flex;
+    flex-direction: row wrap;
+    align-items: center;
+    margin: auto;
+    padding: 3.125rem 0rem;
+}
+.user__dashboard__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsl(0deg, 0%, 0%);
+    margin-bottom: 0.9375rem;
+}
+.user__dashboard__title span {
+    color: hsl(230deg, 87%, 61%);
+}
+.user__dashboard__subtitle {
+    font-size: 1.5rem;
+}
+.user__dashboard__info {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+.user__dashboard__content {
+    text-align: center;
+}
+.user__dashboard__links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.user__dashboard__clockStyle {
+    font-size: 3rem;
+    margin: 0;
+    padding: 10px;
+    color: #000000;
+    text-align: center;
+}
+.user__dashboard__calendar {
+    margin-left: 48px;
+}
+.user__dashboard__cta {
+    text-align: center;
+    margin-bottom: 1.5625rem;
+}
+.user__dashboard__cta button {
+    border: none;
+    border-radius: 0.3125rem;
+    padding: 0.3125rem 0.9375rem;
+    color: hsl(0deg, 0%, 100%);
+    background-color: hsl(2deg, 76%, 54%);
+    width: 19.0625rem;
+}
+.user__dashboard .card .card-header {
+    background-color: hsl(0deg, 0%, 100%);
+    padding: 15px;
+}
+.user__dashboard .card .card-body {
+    padding: 1rem;
+}
+
+#profile-overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    cursor: default;
+}
+#profile-overlay .card {
+    margin: auto;
+    display: block;
+    top: 5.3125rem;
+}
+
+.profile__overlay__item {
+    display: flex;
+    flex-direction: column wrap;
+}
+.profile__overlay__header {
+    margin-right: auto;
+    cursor: default;
+    font-weight: 700;
+}
+.profile__overlay__button {
+    border: none;
+    border-radius: 1.5625rem;
+    padding: 0rem 0.5rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+.profile__overlay__cursor {
+    cursor: pointer;
+}
+.profile__overlay__cta {
+    text-align: center;
+    margin-top: 0.625rem;
+    margin-bottom: 20px;
+}
+.profile__overlay__cta button {
+    border: none;
+    border-radius: 0.3125rem;
+    padding: 0.3125rem 0.9375rem;
+    color: hsl(0deg, 0%, 100%);
+    background-color: hsl(145deg, 55%, 49%);
+    width: 19.0625rem;
+}
+
+.profile__overlay__vv {
+    text-align: center;
+    margin-top: 0.625rem;
+    margin-bottom: 20px;
+}
+.profile__overlay__vv button {
+    border: none;
+    border-radius: 0.3125rem;
+    padding: 0.3125rem 0.9375rem;
+    color: hsl(0deg, 0%, 100%);
+    background-color: hsl(145deg, 55%, 49%);
+    width: 19.0625rem;
+}
+
+.profile__overlay .card {
+    top: auto;
+    bottom: 50%;
+    padding: 1.25rem;
+    width: 31.25rem;
+}
+.profile__overlay .card .card-header {
+    background-color: #fff;
+}
+.profile__overlay .card .card-group label {
+    font-weight: 600;
+}
+.profile__overlay .card .card-group input,
+.profile__overlay .card .card-group select {
+    margin-right: 0.9375rem;
+}
+.profile__overlay .card .card-group:not(.card-group:last-child) {
+    padding: 0.625rem 0rem;
+}
+.profile__overlay .card .card-group:last-child {
+    padding-top: 0.625rem;
+}
+
+#task-overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    cursor: default;
+}
+#task-overlay .card {
+    margin: auto;
+    display: block;
+    top: 7.5rem;
+}
+
+.task__overlay__item {
+    display: flex;
+    flex-direction: column wrap;
+}
+.task__overlay__header {
+    margin-right: auto;
+    cursor: default;
+    font-weight: 700;
+}
+.task__overlay__button {
+    border: none;
+    border-radius: 1.5625rem;
+    padding: 0rem 0.5rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+.task__overlay__cta {
+    text-align: center;
+    margin-top: 1.25rem;
+}
+.task__overlay__cta button {
+    border: none;
+    border-radius: 0.3125rem;
+    padding: 0.3125rem 0.9375rem;
+    color: hsl(0deg, 0%, 100%);
+    background-color: hsl(2deg, 76%, 54%);
+    width: 19.0625rem;
+}
+.task__overlay .card {
+    top: auto;
+    bottom: 50%;
+    padding: 1.25rem;
+    width: 31.25rem;
+}
+.task__overlay .card .card-group label {
+    font-weight: 600;
+}
+.task__overlay .card .card-group input,
+.task__overlay .card .card-group select {
+    margin-right: 0.9375rem;
+}
+.task__overlay .card .card-group textarea {
+    margin-right: 0.9375rem;
+    margin-left: 0.9375rem;
+}
+.task__overlay .card .card-group:not(.card-group:last-child) {
+    padding: 0.625rem 0rem;
+}
+
+.table__grid {
+    display: grid;
+}
+.table__item {
+    display: flex;
+    flex-direction: row wrap;
+}
+.table__filter {
+    display: flex;
+    flex-direction: row wrap;
+    margin-left: auto;
+}
+.table__filter div:first-child {
+    padding-right: 0.9375rem;
+}
+.table__filter div:not(:first-child, :last-child) {
+    padding: 0rem 0.9375rem;
+}
+.table__filter div:last-child {
+    padding-left: 0.9375rem;
+}
+.table__header {
+    border-bottom: 0.0625rem hsl(220deg, 14%, 96%) solid;
+    background-color: hsl(220deg, 14%, 96%);
+}
+.table__row__data {
+    padding-right: 1.25rem;
+}
+.table__row__data select {
+    border: none;
+}
+.table__header th:first-child,
+.table__header td:first-child,
+.table__row th:first-child,
+.table__row td:first-child {
+    padding: 0.625rem 0.9375rem 0.625rem 0.9375rem;
+}
+.table__header th:not(:first-child, :last-child),
+.table__header td:not(:first-child, :last-child),
+.table__row th:not(:first-child, :last-child),
+.table__row td:not(:first-child, :last-child) {
+    padding: 0.625rem 0.9375rem;
+}
+.table__header th:last-child,
+.table__header td:last-child,
+.table__row th:last-child,
+.table__row td:last-child {
+    padding: 0.625rem 0.9375rem 0.625rem 0.9375rem;
+}
+.table__pagination {
+    float: right;
+    padding: 0.3125rem 1.25rem;
+} /*# sourceMappingURL=style.css.map */
+
+.style-header{
+    font-weight: bolder;
+    font-size: larger;
+    text-align: center;
+}
+

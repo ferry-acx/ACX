@@ -1,0 +1,28 @@
+.pagination-container ul {
+    /* margin-right:10rem;
+    margin-left: 5rem; */
+    margin: auto;
+    text-align: center;
+
+}
+
+.pagination-container li{
+    display: inline-block;
+    width: 20%;
+}
+.pagination-pag li:hover{
+    cursor: pointer;
+}
+table tbody tr {
+	display: none;
+}
+
+ul {
+   list-style-type: none;
+    display: flex;
+  }
+
+.form-group{
+    margin-right:auto;
+    margin-left: auto;
+}

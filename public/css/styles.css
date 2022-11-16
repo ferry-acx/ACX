@@ -1,0 +1,159 @@
+/* .input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+
+.input-container input {
+    width: 50%;
+    padding: 10px 25px;
+    font-size: 18px;
+    border: 2px solid skyblue;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(80, 80, 80);
+    font-family: "Roboto Slab", sans-serif;
+}
+
+.input-container input::placeholder {
+    color: rgb(135, 135, 135);
+}
+
+.tag-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.tags-container {
+    width: auto;
+}
+
+.tags-container .tag {
+    display: inline-block;
+    padding: 3px 12px;
+    font-size: 12px;
+    background: #eee;
+    margin: 3px;
+    border-radius: 5px;
+    text-transform: lowercase;
+    cursor: default;
+}
+
+.tags-container .tag .tag-close {
+    content: "x";
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 10px;
+}
+
+.chip {
+    background-color: #d3d3d3;
+    border-radius: 15px;
+    padding: 5px 15px;
+}
+
+.chip:last-child,
+.chip:first-child,
+.chip:not(.chip:last-child, .chip:first-child) {
+    margin: 5px 0px;
+} */
+
+
+/* tags input*/
+.tags-input 
+{
+  	list-style : none;   
+    overflow:hidden;
+    width: 50%;
+    padding: 10px 15px;
+    font-size: 12px;
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 2px;
+    outline: none;
+    color: rgb(80, 80, 80);
+    font-family: "Roboto Slab", sans-serif;
+}
+
+.tags-input li
+{
+  	float:left;
+    margin-top: 5px;
+}
+
+.tags
+{
+  	background:#3fbe89;
+  	padding:5px 20px 5px 8px;
+    border-radius: 5px;  	
+    margin-right: 5px;
+  	position: relative;
+    font-size: 12px;
+
+}
+
+.tags i
+{
+	position: absolute; 
+	right:6px;
+	top:3px;
+	width: 8px;
+	height: 8px;
+	content:'';
+	cursor:pointer;
+	opacity: .7;
+    font-size:12px;
+}
+
+.tags i:hover
+{
+	opacity: 1;
+}
+
+.tags-new input[type="text"]
+{
+    border:0;
+	margin: 0;
+	padding: 0 0 0 3px;
+	font-size: 12px;
+	margin-top: 5px;
+    background:transparent;
+}
+
+.tags-new input[type="text"]:focus
+{
+  	outline:none;
+}
+
+
+/* pagination */
+
+.pagination-container ul {
+    margin-right:10rem;
+    margin-left: 5rem;
+    text-align: center;
+
+}
+
+.pagination-container li{
+    display: inline-block;
+    width: 20%;
+}
+.pagination-pag li:hover{
+    cursor: pointer;
+}
+table tbody tr {
+	display: none;
+}
+
+ul {
+    list-style-type: none;
+    display:flex;
+  }
+
+.form-group{
+    margin-right:auto;
+    margin-left: auto;
+}
