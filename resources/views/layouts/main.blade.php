@@ -20,15 +20,18 @@
 
     <!-- datetimepicker plugin -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
 
     <!-- AJAX SCRIPT -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -36,8 +39,11 @@
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 
 
     <!-- Fonts -->
@@ -115,15 +121,10 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" v-pre>
-                                Reports<span class="caret"></span>
+                            <a id="navbar" class="nav-link" href="/admin/reports" role="button" aria-haspopup="true"
+                                aria-expanded="false" v-pre>
+                                Reports <span class="caret"></span>
                             </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item profile__overlay__cursor" href="/admin/reports" >All Reports</a>
-                                <a class="dropdown-item profile__overlay__cursor" href="/admin/reportsv2" >Filtered Reports</a>
-                            </div>
                         </li>
 
 
@@ -152,13 +153,13 @@
             </div>
         </nav>
 
-        
+
     </div>
 
     <main class="">
         @yield('content')
     </main>
-    
+
     <!-- Edit Admin Profile -->
     <div class="modal fade" id="adminProfile" tabindex="-1" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog modal-lg">
@@ -176,11 +177,11 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row mb-3">
-                                    <label for="admin_employee_id" class="col-sm-2 col-form-label">Employee
+                                        <label for="admin_employee_id" class="col-sm-2 col-form-label">Employee
                                             ID</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" name="admin_employee_id"
-                                            value="{{Auth::user()->admin_employee_id}}" required disabled>
+                                                value="{{Auth::user()->admin_employee_id}}" required disabled>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -192,7 +193,8 @@
                                     <div class="mb-3 row">
                                         <label for="password" class="col-sm-2 col-form-label">Password</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="password" placeholder="Input your password" required>
+                                            <input type="text" class="form-control" name="password"
+                                                placeholder="Input your password" required>
                                         </div>
                                     </div>
                                 </div>
@@ -205,7 +207,7 @@
                 </form>
             </div>
         </div>
-        
+
     </div>
 
     <footer id="footer">

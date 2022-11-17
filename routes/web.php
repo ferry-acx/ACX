@@ -25,7 +25,7 @@ Route::get('/', [Controller::class, 'view']);
 Route::get('/login', [Controller::class, 'login']);
 Auth::routes();
 
-Route::post('/reportsv2',[ReportsController::class,'recordsfilter'])->name('reportsv2/recordsfilter');
+Route::post('/reports',[ReportsController::class,'recordsfilter'])->name('reports/recordsfilter');
 
 Route::prefix('user')->name('user.')->group(function(){
 
@@ -67,9 +67,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
       Route::post('/UpdateProfile', [AdminController::class, 'UpdateProfile'])->name('UpdateProfile');
       Route::view('/reports', 'admin.reports')->name('reports');
       Route::get('/reports',[ReportsController::class,'displayReports'])->name('displayReports');
-
-      Route::view('/reportsv2', 'admin.reportsv2')->name('reportsv2');
-      Route::get('/reportsv2',[ReportsController::class,'displayReportsv2'])->name('displayReportsv2');
+      
 
       Route::view('/employee', 'admin.employee')->name('employee');
       Route::get('/generatePDF', [PDFController::class, 'generatePDF'])->name('generatePDF');

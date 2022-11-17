@@ -22,17 +22,6 @@ class ReportsController extends Controller
     public function displayReports()
     {
         $attendance = Attendance::all();
-        return view('admin.reports')->with(['attendances'=> $attendance]);
-    }
-
-    public function display()
-    {
-        return view('admin.reportsv2');
-    }
-
-    public function displayReportsV2()
-    {
-        $attendance = Attendance::all();
         $employees= User::orderBy("updated_at","desc")->get();
         $employee_names = array();
         $ids = array();
@@ -42,7 +31,7 @@ class ReportsController extends Controller
 
         }
 
-        return view('admin.reportsv2')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids]);
+        return view('admin.reports')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids]);
     }
 
     public function exportpdf(){
