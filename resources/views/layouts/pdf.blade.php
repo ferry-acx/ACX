@@ -8,55 +8,50 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
 </head>
 
 <style>
-    .page-break {
-        page-break-after: always;
-    }
+.page-break {
+    page-break-after: always;
+}
 
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
 
-    td,
-    th {
-        border: 1px solid #dddddd;
-        text-align: center;
-        padding: 8px;
-    }
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
 
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
-    
-    .center {
-        padding-left: 32%;
-    }
-    
-    .text-header{
-        text-align: center;        
-    }
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
 
+.center {
+    padding-left: 32%;
+}
+
+.text-header {
+    text-align: center;
+}
 </style>
 
-    <body>
+<body>
 
-        <img src="{{public_path('logo-acx.jpg')}}"alt="ACX Logo" width="350px" height="100px" class="center">
-        <div class="text-header">
-            <p style="font-size: 20px; font-weight: bolder;">Employee Reports</p>
-        </div>
+    <img src="{{public_path('logo-acx.jpg')}}" alt="ACX Logo" width="350px" height="100px" style="margin-left: 25%;">
+    <div class="text-header">
+        <p style="font-size: 20px; font-weight: bolder;">Employee Reports</p>
+    </div>
 
-        <main class="">
-            @yield('content')
-        </main>
-    </body>
+    <main class="">
+        @yield('content')
+    </main>
+</body>
 
 </html>
-
-
-
-

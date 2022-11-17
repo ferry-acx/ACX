@@ -18,7 +18,7 @@ class PDFController extends Controller {
 
         $pdf = PDF::loadView('admin.myPDF', [
             'attendances' => Attendance::all()
-        ])->setPaper('a4','landscape')->save('myPDF.pdf');
+        ])->setPaper('a4','portrait')->save('myPDF.pdf');
 
         
 
@@ -26,15 +26,4 @@ class PDFController extends Controller {
 
     }
 
-    public function generatePDF2(){
-
-        $pdf = PDF::loadView('admin.myPDF2', [
-            'attendances' => Attendance::all()
-        ])->setPaper('a4','landscape')->save('myPDF2.pdf');
-
-        
-
-        return $pdf->download('Attendance Report.pdf');
-
-    }
 }
