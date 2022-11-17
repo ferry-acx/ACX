@@ -14,8 +14,8 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <div class="row justify-content-center" style="padding-top: 30px; padding-bottom: 30px;">
-                            <div class="col-sm-3">
+                        <div class="row card-body">
+                            <div class="col-3">
                                 <label class="form-label">Employee Name</label>
                                 <select class="form-select" id="name_of_employee">
                                     <option class="hidden" selected disabled>Choose</option>
@@ -24,25 +24,24 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-md-4" style="margin-right:-15%;">
                                 <label class="form-label">Start Date</label>
-                                <input name="startDate" id="since" type="date" class="form-control" autofocus />
+                                <input name="startDate" id="since" type="date" class="form-control mb-3 w-50"
+                                    autofocus />
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-md-4" style="margin-right:-15%;">
                                 <label class="form-label">End Date</label>
-                                <input name="endDate" id="until" type="date" class="form-control" autofocus />
+                                <input name="endDate" id="until" type="date" class="form-control mb-3 w-50" autofocus />
                             </div>
-                            <div class="col-sm-3">
-                                <!-- <div class="col-sm-9"> -->
-                                    <button class="btn btn-warning" type="" id="gethrs-btn">Execute</button>
-                                    <p id="result"></p>
-                                <!-- </div> -->
+                            
+                            <div class="col-md-4" style="margin-right:-90px;">
+                            <label class="form-label">Total Hours Rendered</label>
+                                <div class="input-group">
+                                    <button class="btn btn-warning" id="gethrs-btn">Execute</button>
+                                    <input name="totalHrs" id="totalHrs" class="form-control" readonly>
+                                </div>
                             </div>
-                            <div class="col-sm-3">
-                                <label class="form-label">Total Hours Rendered</label>
-                                <input name="totalHrs" id="totalHrs" class="form-control mb-1" placeholder=""
-                                    aria-label="default input example" readonly>
-                            </div>
+
                         </div>
 
                         <div class="card-body">
