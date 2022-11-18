@@ -1,5 +1,4 @@
 @extends('layouts.main')
-
 @section('content')
 
 
@@ -18,7 +17,7 @@
                             <div class="col-3">
                                 <label class="form-label">Employee Name</label>
                                 <select class="form-select" id="name_of_employee">
-                                    <option class="hidden" selected disabled>Choose</option>
+                                    <option value="" class="hidden" selected disabled>Choose</option>
                                     @foreach (array_combine($employees, $ids) as $employee => $id)
                                     <option value="{{$id}}">{{$employee}}</option>
                                     @endforeach
@@ -33,9 +32,9 @@
                                 <label class="form-label">End Date</label>
                                 <input name="endDate" id="until" type="date" class="form-control mb-3 w-50" autofocus />
                             </div>
-                            
+
                             <div class="col-md-4" style="margin-right:-90px;">
-                            <label class="form-label">Total Hours Rendered</label>
+                                <label class="form-label">Total Hours Rendered</label>
                                 <div class="input-group">
                                     <button class="btn btn-warning" id="gethrs-btn">Execute</button>
                                     <input name="totalHrs" id="totalHrs" class="form-control" readonly>
