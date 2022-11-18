@@ -19,10 +19,10 @@
                                     <div class="input-group">
                                         <input class="form-control" style="margin-right:10px" id="myInput" type="text"
                                             placeholder="Search..">
-                                        <div>
+                                        <!-- <div>
                                             <a class="btn btn-success" href="{{ route('admin.generatePDF') }}">Export
                                                 PDF</a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
