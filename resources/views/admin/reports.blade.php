@@ -65,13 +65,8 @@
                                 <thead>
                                     <tr class="table__header">
                                         <th class="col-employee_id">Employee ID</th>
-                                        <th class="col-attendance_date">Date</th>
                                         <th class="col-name">Name</th>
-                                        <th class="col-time_in">Time In</th>
-                                        <th class="col-time_out">Time Out</th>
                                         <th class="col-total_time">Total Hours</th>
-                                        <th class="col-task">Tasks Done For the Day</th>
-                                        <th class="col-supervisor_ass">Supervisor Assessment</th>
                                     </tr>
                                 </thead>
 
@@ -79,14 +74,9 @@
                                     @foreach( $attendances as $attendance)
                                     <tr class="table__row">
                                         <td class="col-employee_id">{{$attendance->user->employee_id}}</td>
-                                        <td class="col-attendance_date">{{$attendance->attendance_date}}</td>
                                         <td class="col-name">{{$attendance->user->first_name}}
                                             {{$attendance->user->last_name}}</td>
-                                        <td class="col-time_in">{{$attendance->time_in}} </td>
-                                        <td class="col-time_out">{{$attendance->time_out}} </td>
-                                        <td class="col-total_time">{{$attendance->total_time }} </td>
-                                        <td class="col-task">{{$attendance->task}} </td>
-                                        <td class="col-supervisor_ass">{{$attendance->supervisor_ass}}</td>
+                                        <td class="col-total_time">{{$attendance->timeSum }} </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
