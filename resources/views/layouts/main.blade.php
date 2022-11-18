@@ -193,8 +193,8 @@
                                     <div class="mb-3 row">
                                         <label for="password" class="col-sm-2 col-form-label">Password</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="password"
-                                                placeholder="Input your password" required>
+                                            <input type="password" id="myInput" class="form-control"
+                                                placeholder="Input your password" name="password" required> <br>
                                         </div>
                                     </div>
                                 </div>
