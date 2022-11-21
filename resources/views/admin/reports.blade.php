@@ -13,7 +13,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <div class="row card-body">
+                        <div class="row card-body" style="background-color:gray; margin-bottom:20px">
                             <div class="col-3">
                                 <label class="form-label">Employee Name</label>
                                 <select class="form-select" id="name_of_employee">
@@ -40,7 +40,6 @@
                                     <input name="totalHrs" id="totalHrs" class="form-control" readonly>
                                 </div>
                             </div>
-
                         </div>
 
                         <div class="card-body">
@@ -48,8 +47,21 @@
                                 <div class="table__item">
                                     <div class="table__search">
                                         <div class="input-group">
-                                            <input class="form-control" style="margin-right:10px" id="myInput"
-                                                type="text" placeholder="Search..">
+                                            <input class="form-control mb-3 w-20" style="margin-right:10px" id="myInput"
+                                                type="text" placeholder="Search.." width="10%">
+                                            <label class="form-label"
+                                                style="padding-top:5px; padding-left:10px; padding-right:10px">Start
+                                                Date</label>
+                                            <div>
+                                                <input name="startDate" id="since" type="date"
+                                                    class="form-control mb-3 w-53" autofocus />
+                                            </div>
+                                            <label style="padding-top:5px; padding-left:10px; padding-right:10px"
+                                                class="form-label">End Date</label>
+                                            <div style="padding-right:10px;">
+                                                <input name="endDate" id="until" type="date"
+                                                    class="form-control mb-3 w-53" autofocus />
+                                            </div>
                                             <div>
                                                 <a class="btn btn-success"
                                                     href="{{ route('admin.generatePDF') }}">Export
