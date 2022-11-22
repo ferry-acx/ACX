@@ -44,9 +44,19 @@ class ReportsController extends Controller
 
     public function displayAllReports()
     {
-        $attendance = Attendance::all();
+        $attendance = Attendance::select("*", DB::raw("SEC_TO_TIME( SUM( TIME_TO_SEC( total_time ) ) ) AS timeSum"))
+        ->groupBy(DB::raw("user_id"))
+        ->get();
+        $employees= User::orderBy("updated_at","desc")->get();
+        $employee_names = array();
+        $ids = array();
+        foreach ($employees as $single_employee) {
+            array_push($employee_names,$single_employee->first_name);
+            array_push($ids,$single_employee->id);
 
-        return view('admin.reports_all')->with(['attendances'=> $attendance]);
+        }
+
+        return view('admin.reports_all')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids]);
     }
 
 

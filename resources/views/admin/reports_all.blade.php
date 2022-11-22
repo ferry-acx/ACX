@@ -12,6 +12,38 @@
                     <h5 style="color: black; padding-top: 8px; padding-right: 50px;"><span id="time"></span></h5>
                 </div>
                 <div class="card">
+                <h5 style="color: black; padding-top: 8px; padding-right: 50px;">Individual Employee Total Hours
+                        </h5>
+                        <div class="row card-body" style="margin-bottom:20px">
+                            <div class="col-3">
+                                <label class="form-label">Employee Name</label>
+                                <select class="form-select" id="name_of_employee">
+                                    <option value="" class="hidden" selected disabled>Choose</option>
+                                    @foreach (array_combine($employees, $ids) as $employee => $id)
+                                    <option value="{{$id}}">{{$employee}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-4" style="margin-right:-15%;">
+                                <label class="form-label">Start Date</label>
+                                <input name="startDate" id="since" type="date" class="form-control mb-3 w-50"
+                                    autofocus />
+                            </div>
+                            <div class="col-md-4" style="margin-right:-15%;">
+                                <label class="form-label">End Date</label>
+                                <input name="endDate" id="until" type="date" class="form-control mb-3 w-50" autofocus />
+                            </div>
+
+                            <div class="col-md-4" style="margin-right:-90px;">
+                                <label class="form-label">Total Hours Rendered</label>
+                                <div class="input-group">
+                                    <button class="btn btn-warning" id="gethrs-btn">Execute</button>
+                                    <input name="totalHrs" id="totalHrs" class="form-control" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
                     <div class="card-body">
                         <div class="table__grid">
                             <div class="table__item">
@@ -19,10 +51,6 @@
                                     <div class="input-group">
                                         <input class="form-control" style="margin-right:10px" id="myInput" type="text"
                                             placeholder="Search..">
-                                        <!-- <div>
-                                            <a class="btn btn-success" href="{{ route('admin.generatePDF') }}">Export
-                                                PDF</a>
-                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -100,6 +128,36 @@
     }
 
     setInterval(time, 1000);
+    </script>
+
+<script type="text/javascript">
+    $(function() {
+        $("#gethrs-btn").click(function() {
+            var start_date = $("#since").val();
+            var end_date = $("#until").val();
+            var id = $("#name_of_employee").val();
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: "{{ route('reports_all/recordsfilter') }}",
+                type: "POST",
+                data: {
+                    start_date: start_date,
+                    end_date: end_date,
+                    user_id: id
+                },
+                success: function(data) {
+                    const res = JSON.parse(data);
+                    if (res.length == 0) {
+                        $("#totalHrs").val('0');
+                    } else {
+                        $("#totalHrs").val(res[0].timeSum)
+                    }
+                }
+            });
+        })
+    });
     </script>
 
 

@@ -25,7 +25,7 @@ Route::get('/', [Controller::class, 'view']);
 Route::get('/login', [Controller::class, 'login']);
 Auth::routes();
 
-Route::post('/reports',[ReportsController::class,'recordsfilter'])->name('reports/recordsfilter');
+Route::post('/reports_all',[ReportsController::class,'recordsfilter'])->name('reports_all/recordsfilter');
 Route::post('/reports',[ReportsController::class,'tablefilter'])->name('reports/tablefilter');
 
 
