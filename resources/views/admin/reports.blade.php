@@ -19,32 +19,31 @@
                                     Hours</h5>
                                 <div class="table__item">
                                     <div class="table__search">
-                                    <input class="form-control mb-3 w-20" style="margin-right:10px" id="myInput"
-                                                type="text" placeholder="Search.." width="10%">
                                         <form method="post" action="{{ route('admin.displayReportsByDate') }}">
                                             @csrf
-                                        <div class="input-group">
-                            
-                                            <label class="form-label"
-                                                style="padding-top:5px; padding-left:10px; padding-right:10px">Start
-                                                Date</label>
-                                            <div>
-                                                <input name="startDate" id="since-start" type="date"
-                                                    class="form-control mb-3 w-53" autofocus />
-                                            </div>
-                                            <label style="padding-top:5px; padding-left:10px; padding-right:10px"
-                                                class="form-label">End Date</label>
-                                            <div style="padding-right:10px;">
-                                                <input name="endDate" id="until-end" type="date"
-                                                    class="form-control mb-3 w-53" autofocus />
-                                            </div>
-                                            <div>
-                                                <button type="submit" class="btn btn-warning" id="">Execute</button>
-                                            </div>
+                                            <div class="input-group">
+                                                <label class="form-label"
+                                                    style="padding-top:5px; padding-left:10px; padding-right:10px">Start
+                                                    Date</label>
+                                                <div>
+                                                    <input name="startDate" id="since-start" type="date"
+                                                        class="form-control mb-3 w-53" autofocus />
+                                                </div>
+                                                <label style="padding-top:5px; padding-left:10px; padding-right:10px"
+                                                    class="form-label">End Date</label>
+                                                <div style="padding-right:10px;">
+                                                    <input name="endDate" id="until-end" type="date"
+                                                        class="form-control mb-3 w-53" autofocus />
+                                                </div>
+                                                <div>
+                                                    <button type="submit" class="btn btn-warning" id="">Execute</button>
+                                                </div>
 
                                             </div>
                                         </form>
                                         <div>
+                                        <input class="form-control mb-3 w-20" style="margin-right:10px" id="myInput"
+                                            type="text" placeholder="Search.." width="10%">
                                             <a class="btn btn-success" href="{{ route('admin.generatePDF') }}">Export
                                                 PDF</a>
                                         </div>
@@ -119,7 +118,6 @@ function time() {
 
 setInterval(time, 1000);
 </script>
-
 
 
 <script src="{{asset('js/search.js')}}"></script>
