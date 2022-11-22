@@ -19,6 +19,8 @@
                                     Hours</h5>
                                 <div class="table__item">
                                     <div class="table__search">
+                                        <form method="post" action="{{ action('displayReportsByDate') }}">
+                                            @csrf
                                         <div class="input-group">
                                             <input class="form-control mb-3 w-20" style="margin-right:10px" id="myInput"
                                                 type="text" placeholder="Search.." width="10%">
@@ -36,10 +38,11 @@
                                                     class="form-control mb-3 w-53" autofocus />
                                             </div>
                                             <div>
-                                                <button class="btn btn-warning" id="execute-btn">Execute</button>
+                                                <button type="submit" class="btn btn-warning" id="">Execute</button>
                                             </div>
 
                                         </div>
+                                    </form>
                                         <div>
                                             <a class="btn btn-success" href="{{ route('admin.generatePDF') }}">Export
                                                 PDF</a>

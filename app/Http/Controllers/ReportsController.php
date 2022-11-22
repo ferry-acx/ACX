@@ -36,6 +36,28 @@ class ReportsController extends Controller
         return view('admin.reports')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids]);
     }
 
+    public function displayReportsByDate(Request $request)
+    {
+
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+
+        $attendance = Attendance::select("*", DB::raw("SEC_TO_TIME( SUM( TIME_TO_SEC( total_time ) ) ) AS timeSum"))
+        ->whereBetween('attendance_date', [$start_date, $end_date])
+        ->groupBy(DB::raw("user_id"))
+        ->get();
+        $employees= User::orderBy("updated_at","desc")->get();
+        $employee_names = array();
+        $ids = array();
+        foreach ($employees as $single_employee) {
+            array_push($employee_names,$single_employee->first_name);
+            array_push($ids,$single_employee->id);
+
+        }
+
+        return view('admin.reports')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids]);
+    }
+
 
     public function display()
     {
