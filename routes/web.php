@@ -69,7 +69,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
       Route::view('/reports', 'admin.reports')->name('reports');
       Route::get('/reports',[ReportsController::class,'displayReports'])->name('displayReports');
-      Route::get('/reports',[ReportsController::class,'displayReportsByDate'])->name('displayReportsByDate');
+      Route::post('/reports',[ReportsController::class,'displayReportsByDate'])->name('displayReportsByDate');
 
 
       Route::view('/reports_all', 'admin.reports_all')->name('reports_all');
