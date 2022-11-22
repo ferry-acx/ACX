@@ -13,7 +13,8 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <div class="row card-body" style="background-color:gray; margin-bottom:20px">
+                    <h5 style="color: black; padding-top: 8px; padding-right: 50px;">Individual Employee Total Hours</h5>
+                        <div class="row card-body" style="margin-bottom:20px">
                             <div class="col-3">
                                 <label class="form-label">Employee Name</label>
                                 <select class="form-select" id="name_of_employee">
@@ -41,9 +42,10 @@
                                 </div>
                             </div>
                         </div>
-
+                        <hr>
                         <div class="card-body">
                             <div class="table__grid">
+                            <h5 style="color: black; padding-top: 8px; padding-right: 50px;">All Employee Total Hours</h5>
                                 <div class="table__item">
                                     <div class="table__search">
                                         <div class="input-group">
