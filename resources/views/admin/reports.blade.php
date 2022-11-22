@@ -13,7 +13,8 @@
 
                 <div class="card">
                     <div class="card-header">
-                    <h5 style="color: black; padding-top: 8px; padding-right: 50px;">Individual Employee Total Hours</h5>
+                        <h5 style="color: black; padding-top: 8px; padding-right: 50px;">Individual Employee Total Hours
+                        </h5>
                         <div class="row card-body" style="margin-bottom:20px">
                             <div class="col-3">
                                 <label class="form-label">Employee Name</label>
@@ -45,7 +46,8 @@
                         <hr>
                         <div class="card-body">
                             <div class="table__grid">
-                            <h5 style="color: black; padding-top: 8px; padding-right: 50px;">All Employee Total Hours</h5>
+                                <h5 style="color: black; padding-top: 8px; padding-right: 50px;">All Employee Total
+                                    Hours</h5>
                                 <div class="table__item">
                                     <div class="table__search">
                                         <div class="input-group">
@@ -55,15 +57,16 @@
                                                 style="padding-top:5px; padding-left:10px; padding-right:10px">Start
                                                 Date</label>
                                             <div>
-                                                <input name="startDate" id="since" type="date"
+                                                <input name="startDate" id="since-start" type="date"
                                                     class="form-control mb-3 w-53" autofocus />
                                             </div>
                                             <label style="padding-top:5px; padding-left:10px; padding-right:10px"
                                                 class="form-label">End Date</label>
                                             <div style="padding-right:10px;">
-                                                <input name="endDate" id="until" type="date"
+                                                <input name="endDate" id="until-end" type="date"
                                                     class="form-control mb-3 w-53" autofocus />
                                             </div>
+                                            <button class="btn btn-warning" id="execute-btn">Execute</button>
                                             <div>
                                                 <a class="btn btn-success"
                                                     href="{{ route('admin.generatePDF') }}">Export
@@ -166,8 +169,34 @@
                 }
             });
         })
+
+        $("#execute-btn").click(function() {
+            var start_date = $("#since-start").val();
+            var end_date = $("#until-end").val();
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: "{{ route('reports/tablefilter') }}",
+                type: "POST",
+                data: {
+                    start_date: start_date,
+                    end_date: end_date,
+                    user_id: id
+                },
+                success: function(data) {
+                    const res = JSON.parse(data);
+                    if (res.length == 0) {
+                        $("#totalHrs").val('0');
+                    } else {
+                        $("#totalHrs").val(res[0].timeSum)
+                    }
+                }
+            });
+        })
     });
     </script>
+
 
     <script src="{{asset('js/search.js')}}"></script>
     @endsection

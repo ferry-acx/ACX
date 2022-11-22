@@ -74,4 +74,19 @@ class ReportsController extends Controller
         return json_encode($times);
 
     }
+    public function tablefilter(Request $request)
+    {
+
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+        $times =  DB::table('attendances')
+                ->whereBetween('attendance_date', [$start_date, $end_date])
+                ->selectRaw('SEC_TO_TIME( SUM( TIME_TO_SEC( `total_time` ) ) ) AS timeSum')
+                ->get();
+        \Log::info($times);
+
+
+        return json_encode($times);
+
+    }
 }

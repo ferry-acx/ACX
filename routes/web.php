@@ -26,6 +26,8 @@ Route::get('/login', [Controller::class, 'login']);
 Auth::routes();
 
 Route::post('/reports',[ReportsController::class,'recordsfilter'])->name('reports/recordsfilter');
+Route::post('/reports',[ReportsController::class,'tablefilter'])->name('reports/tablefilter');
+
 
 Route::prefix('user')->name('user.')->group(function(){
 
@@ -87,6 +89,3 @@ Route::prefix('admin')->name('admin.')->group(function(){
    });
 
 });
-
-
-
