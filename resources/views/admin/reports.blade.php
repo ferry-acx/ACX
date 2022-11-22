@@ -19,12 +19,11 @@
                                     Hours</h5>
                                 <div class="table__item">
                                     <div class="table__search">
-                                    <input class="form-control mb-3 w-20" style="margin-right:10px" id="myInput"
-                                                type="text" placeholder="Search.." width="10%">
                                         <form method="post" action="{{ route('admin.displayReportsByDate') }}">
                                             @csrf
                                         <div class="input-group">
-                            
+                                            <input class="form-control mb-3 w-20" style="margin-right:10px" id="myInput"
+                                                type="text" placeholder="Search.." width="10%">
                                             <label class="form-label"
                                                 style="padding-top:5px; padding-left:10px; padding-right:10px">Start
                                                 Date</label>
@@ -42,8 +41,8 @@
                                                 <button type="submit" class="btn btn-warning" id="">Execute</button>
                                             </div>
 
-                                            </div>
-                                        </form>
+                                        </div>
+                                    </form>
                                         <div>
                                             <a class="btn btn-success" href="{{ route('admin.generatePDF') }}">Export
                                                 PDF</a>
@@ -119,7 +118,6 @@ function time() {
 
 setInterval(time, 1000);
 </script>
-
 
 
 <script src="{{asset('js/search.js')}}"></script>
