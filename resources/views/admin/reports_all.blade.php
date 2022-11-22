@@ -61,6 +61,7 @@
                                 </div>
                             </div>
                             <br>
+
                             <div class="table-responsive">
                                 <table class="table table-borderless" id="table-id">
                                     <thead>
@@ -122,53 +123,55 @@
                                     </nav>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script type="text/javascript">
-    var timeElement = document.getElementById('time');
+<script type="text/javascript">
+var timeElement = document.getElementById('time');
 
-    function time() {
-        timeElement.textContent = new Date().toLocaleString();
-    }
+function time() {
+    timeElement.textContent = new Date().toLocaleString();
+}
 
-    setInterval(time, 1000);
-    </script>
+setInterval(time, 1000);
+</script>
 
-    <script type="text/javascript">
-    $(function() {
-        $("#gethrs-btn").click(function() {
-            var start_date = $("#since").val();
-            var end_date = $("#until").val();
-            var id = $("#name_of_employee").val();
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                url: "{{ route('reports_all/recordsfilter') }}",
-                type: "POST",
-                data: {
-                    start_date: start_date,
-                    end_date: end_date,
-                    user_id: id
-                },
-                success: function(data) {
-                    const res = JSON.parse(data);
-                    if (res.length == 0) {
-                        $("#totalHrs").val('0');
-                    } else {
-                        $("#totalHrs").val(res[0].timeSum)
-                    }
+<script type="text/javascript">
+$(function() {
+    $("#gethrs-btn").click(function() {
+        var start_date = $("#since").val();
+        var end_date = $("#until").val();
+        var id = $("#name_of_employee").val();
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "{{ route('reports_all/recordsfilter') }}",
+            type: "POST",
+            data: {
+                start_date: start_date,
+                end_date: end_date,
+                user_id: id
+            },
+            success: function(data) {
+                const res = JSON.parse(data);
+                if (res.length == 0) {
+                    $("#totalHrs").val('0');
+                } else {
+                    $("#totalHrs").val(res[0].timeSum)
                 }
-            });
-        })
-    });
-    </script>
+            }
+        });
+    })
+});
+</script>
 
 
-    <script src="{{asset('js/search.js')}}"></script>
-    @endsection
+<script src="{{asset('js/search.js')}}"></script>
+@endsection

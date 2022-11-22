@@ -105,38 +105,38 @@
             </div>
         </div>
     </div>
+</div>
+<script type="text/javascript">
+var timeElement = document.getElementById('time');
 
-    <script type="text/javascript">
-    var timeElement = document.getElementById('time');
+function time() {
+    timeElement.textContent = new Date().toLocaleString();
+}
 
-    function time() {
-        timeElement.textContent = new Date().toLocaleString();
-    }
+setInterval(time, 1000);
+</script>
 
-    setInterval(time, 1000);
-    </script>
-
-    <script type="text/javascript">
-    $(function() {
-        $("#execute-btn").click(function() {
-            var start_date = $("#since-start").val();
-            var end_date = $("#until-end").val();
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                url: "{{ route('reports/tablefilter') }}",
-                type: "POST",
-                data: {
-                    start_date: start_date,
-                    end_date: end_date,
-                },
-                success: function(data) {
-                    const res = JSON.parse(data);
-                    $("#myTable").empty();
-                    let html = '';
-                    res.forEach(info => {
-                        html += `
+<script type="text/javascript">
+$(function() {
+    $("#execute-btn").click(function() {
+        var start_date = $("#since-start").val();
+        var end_date = $("#until-end").val();
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "{{ route('reports/tablefilter') }}",
+            type: "POST",
+            data: {
+                start_date: start_date,
+                end_date: end_date,
+            },
+            success: function(data) {
+                const res = JSON.parse(data);
+                $("#myTable").empty();
+                let html = '';
+                res.forEach(info => {
+                    html += `
                             <tr class="table__row">
                                 <td></td>
                                 <td></td>
@@ -144,16 +144,16 @@
                             </tr>
                             `;
 
-                        //console.log(info)
-                    });
-                    $("#myTable").html(html);
-                    console.log(html);
-                }
-            });
-        })
-    });
-    </script>
+                    //console.log(info)
+                });
+                $("#myTable").html(html);
+                console.log(html);
+            }
+        });
+    })
+});
+</script>
 
 
-    <script src="{{asset('js/search.js')}}"></script>
-    @endsection
+<script src="{{asset('js/search.js')}}"></script>
+@endsection
