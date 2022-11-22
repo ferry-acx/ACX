@@ -19,30 +19,30 @@
                                     Hours</h5>
                                 <div class="table__item">
                                     <div class="table__search">
-                                        <form method="post" action="{{ action('displayReportsByDate') }}">
+                                        <form method="post" action="{{ route('displayReportsByDate') }}">
                                             @csrf
-                                        <div class="input-group">
-                                            <input class="form-control mb-3 w-20" style="margin-right:10px" id="myInput"
-                                                type="text" placeholder="Search.." width="10%">
-                                            <label class="form-label"
-                                                style="padding-top:5px; padding-left:10px; padding-right:10px">Start
-                                                Date</label>
-                                            <div>
-                                                <input name="startDate" id="since-start" type="date"
-                                                    class="form-control mb-3 w-53" autofocus />
-                                            </div>
-                                            <label style="padding-top:5px; padding-left:10px; padding-right:10px"
-                                                class="form-label">End Date</label>
-                                            <div style="padding-right:10px;">
-                                                <input name="endDate" id="until-end" type="date"
-                                                    class="form-control mb-3 w-53" autofocus />
-                                            </div>
-                                            <div>
-                                                <button type="submit" class="btn btn-warning" id="">Execute</button>
-                                            </div>
+                                            <div class="input-group">
+                                                <input class="form-control mb-3 w-20" style="margin-right:10px"
+                                                    id="myInput" type="text" placeholder="Search.." width="10%">
+                                                <label class="form-label"
+                                                    style="padding-top:5px; padding-left:10px; padding-right:10px">Start
+                                                    Date</label>
+                                                <div>
+                                                    <input name="startDate" id="since-start" type="date"
+                                                        class="form-control mb-3 w-53" autofocus />
+                                                </div>
+                                                <label style="padding-top:5px; padding-left:10px; padding-right:10px"
+                                                    class="form-label">End Date</label>
+                                                <div style="padding-right:10px;">
+                                                    <input name="endDate" id="until-end" type="date"
+                                                        class="form-control mb-3 w-53" autofocus />
+                                                </div>
+                                                <div>
+                                                    <button type="submit" class="btn btn-warning" id="">Execute</button>
+                                                </div>
 
-                                        </div>
-                                    </form>
+                                            </div>
+                                        </form>
                                         <div>
                                             <a class="btn btn-success" href="{{ route('admin.generatePDF') }}">Export
                                                 PDF</a>
@@ -119,43 +119,6 @@ function time() {
 setInterval(time, 1000);
 </script>
 
-<script type="text/javascript">
-$(function() {
-    $("#execute-btn").click(function() {
-        var start_date = $("#since-start").val();
-        var end_date = $("#until-end").val();
-        $.ajax({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            url: "{{ route('reports/tablefilter') }}",
-            type: "POST",
-            data: {
-                start_date: start_date,
-                end_date: end_date,
-            },
-            success: function(data) {
-                const res = JSON.parse(data);
-                $("#myTable").empty();
-                let html = '';
-                res.forEach(info => {
-                    html += `
-                            <tr class="table__row">
-                                <td></td>
-                                <td></td>
-                                <td>${info.timeSum}</td>
-                            </tr>
-                            `;
-
-                    //console.log(info)
-                });
-                $("#myTable").html(html);
-                console.log(html);
-            }
-        });
-    })
-});
-</script>
 
 
 <script src="{{asset('js/search.js')}}"></script>
