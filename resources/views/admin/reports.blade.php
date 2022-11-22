@@ -35,12 +35,14 @@
                                                 <input name="endDate" id="until-end" type="date"
                                                     class="form-control mb-3 w-53" autofocus />
                                             </div>
-                                            <button class="btn btn-warning" id="execute-btn">Execute</button>
                                             <div>
-                                                <a class="btn btn-success"
-                                                    href="{{ route('admin.generatePDF') }}">Export
-                                                    PDF</a>
+                                                <button class="btn btn-warning" id="execute-btn">Execute</button>
                                             </div>
+
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-success" href="{{ route('admin.generatePDF') }}">Export
+                                                PDF</a>
                                         </div>
                                     </div>
                                 </div>

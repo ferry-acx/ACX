@@ -12,37 +12,44 @@
                     <h5 style="color: black; padding-top: 8px; padding-right: 50px;"><span id="time"></span></h5>
                 </div>
                 <div class="card">
-                <h5 style="color: black; padding-top: 8px; padding-right: 50px;">Individual Employee Total Hours
-                        </h5>
-                        <div class="row card-body" style="margin-bottom:20px">
-                            <div class="col-3">
-                                <label class="form-label">Employee Name</label>
-                                <select class="form-select" id="name_of_employee">
-                                    <option value="" class="hidden" selected disabled>Choose</option>
-                                    @foreach (array_combine($employees, $ids) as $employee => $id)
-                                    <option value="{{$id}}">{{$employee}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="col-md-4" style="margin-right:-15%;">
-                                <label class="form-label">Start Date</label>
-                                <input name="startDate" id="since" type="date" class="form-control mb-3 w-50"
-                                    autofocus />
-                            </div>
-                            <div class="col-md-4" style="margin-right:-15%;">
-                                <label class="form-label">End Date</label>
-                                <input name="endDate" id="until" type="date" class="form-control mb-3 w-50" autofocus />
-                            </div>
+                    <div class="card-header">
+                        <div class="card-body">
+                            <div class="table__grid">
+                                <h5 style="color: black; padding-top: 8px; padding-right: 50px;">Individual Employee
+                                    Total Hours
+                                </h5>
+                                <div class="row card-body" style="margin-bottom:20px">
+                                    <div class="col-3">
+                                        <label class="form-label">Employee Name</label>
+                                        <select class="form-select" id="name_of_employee">
+                                            <option value="" class="hidden" selected disabled>Choose</option>
+                                            @foreach (array_combine($employees, $ids) as $employee => $id)
+                                            <option value="{{$id}}">{{$employee}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4" style="margin-right:-15%;">
+                                        <label class="form-label">Start Date</label>
+                                        <input name="startDate" id="since" type="date" class="form-control mb-3 w-50"
+                                            autofocus />
+                                    </div>
+                                    <div class="col-md-4" style="margin-right:-15%;">
+                                        <label class="form-label">End Date</label>
+                                        <input name="endDate" id="until" type="date" class="form-control mb-3 w-50"
+                                            autofocus />
+                                    </div>
 
-                            <div class="col-md-4" style="margin-right:-90px;">
-                                <label class="form-label">Total Hours Rendered</label>
-                                <div class="input-group">
-                                    <button class="btn btn-warning" id="gethrs-btn">Execute</button>
-                                    <input name="totalHrs" id="totalHrs" class="form-control" readonly>
+                                    <div class="col-md-4" style="margin-right:-90px;">
+                                        <label class="form-label">Total Hours Rendered</label>
+                                        <div class="input-group">
+                                            <button class="btn btn-warning" id="gethrs-btn">Execute</button>
+                                            <input name="totalHrs" id="totalHrs" class="form-control" readonly>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <hr>
+                    </div>
 
                     <div class="card-body">
                         <div class="table__grid">
@@ -74,7 +81,8 @@
                                 @foreach( $attendances as $attendance)
                                 <tr class="table__row">
                                     <td class="col-employee_id">{{$attendance->user->employee_id}}</td>
-                                    <td class="col-attendance_date">{{$attendance->attendance_date}}</td>
+                                    <td class="col-attendance_date">{{$attendance->attendance_date}}
+                                    </td>
                                     <td class="col-name">{{$attendance->user->first_name}}
                                         {{$attendance->user->last_name}}</td>
                                     <td class="col-time_in">{{$attendance->time_in}} </td>
@@ -130,7 +138,7 @@
     setInterval(time, 1000);
     </script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
     $(function() {
         $("#gethrs-btn").click(function() {
             var start_date = $("#since").val();
