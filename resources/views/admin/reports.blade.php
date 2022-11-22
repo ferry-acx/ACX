@@ -49,7 +49,7 @@
                             </div>
                             <br>
                             <div class="table-responsive">
-                                <table class="table table-borderless" id="table-id">
+                                <table class="table" id="table-id">
                                     <thead>
                                         <tr class="table__header">
                                             <th class="col-employee_id">Employee ID</th>
@@ -98,6 +98,7 @@
                                     </nav>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
