@@ -79,9 +79,9 @@ class ReportsController extends Controller
 
         $start_date = $request->start_date;
         $end_date = $request->end_date;
-        $times =  DB::table('attendances')
+        $attedancefilter =  Attendance::select("*", DB::raw("SEC_TO_TIME( SUM( TIME_TO_SEC( total_time ) ) ) AS timeSum"))
                 ->whereBetween('attendance_date', [$start_date, $end_date])
-                ->selectRaw('SEC_TO_TIME( SUM( TIME_TO_SEC( `total_time` ) ) ) AS timeSum')
+                ->groupBy(DB::raw("user_id"))
                 ->get();
         \Log::info($times);
 
