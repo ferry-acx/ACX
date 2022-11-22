@@ -29,8 +29,8 @@
                         </div>
                     </div>
 
-                    <div class="card-body">
-                        <table class="table-bordered table" id="table-id">
+                    <div class="table-responsive">
+                        <table class="table" id="table-id">
                             <thead>
                                 <tr class="table__header">
                                     <th>Employee ID</th>
@@ -257,20 +257,24 @@
                                             <option value="CEO">CEO</option>
                                             <option value="Super Admin - Admin Staff">Super Admin - Admin Staff</option>
                                             <option value="Operations Manager">Operations Manager</option>
-                                            <option value="Designer - Quality Analyst">Designer - Quality Analyst</option>
+                                            <option value="Designer - Quality Analyst">Designer - Quality Analyst
+                                            </option>
                                             <option value="Bookkeeper">Bookkeeper</option>
                                             <option value="Admin Support">Admin Support</option>
                                             <option value="Head Graphic Designer">Head Graphic Designer</option>
                                             <option value="Graphic Designer">Graphic Designer</option>
                                             <option value="Relevate Designer">Relevate Designer</option>
                                             <option value="Project Coordinator">Project Coordinator</option>
-                                            <option value="Digital Marketing Associate">Digital Marketing Associate</option>
-                                            <option value="Senior Project Coordinator">Senior Project Coordinator</option>
+                                            <option value="Digital Marketing Associate">Digital Marketing Associate
+                                            </option>
+                                            <option value="Senior Project Coordinator">Senior Project Coordinator
+                                            </option>
                                             <option value="Web Developer">Web Developer</option>
                                             <option value="Production Support Staff">Production Support Staff</option>
                                             <option value="Virtual Assistant">Virtual Assistant</option>
                                             <option value="Channel Associate">Channel Associate</option>
-                                            <option value="Organizational Development Manager">Organizational Development Manager</option>
+                                            <option value="Organizational Development Manager">Organizational
+                                                Development Manager</option>
                                             <option value="Intern">Intern</option>
                                         </select required>
                                     </div>

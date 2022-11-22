@@ -21,8 +21,8 @@
                         </div>
                     </div>
 
-                    <div class="card-body">
-                        <table class="table-bordered table" id= "table-id">
+                    <div class="table-responsive">
+                        <table class="table" id="table-id">
                             <thead>
                                 <tr class="table__header">
                                     <th>Date</th>
@@ -35,7 +35,7 @@
                                     <th>Location</th>
                                     <th>Supervisor Assessment</th>
                                     <th>Actions</th>
-                                </tr>                                  
+                                </tr>
                             </thead>
 
                             <tbody id="myTable">
@@ -52,7 +52,7 @@
                                     <td>{{$attendance->supervisor_ass}}</td>
                                     <td>
                                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#evaluate{{ $attendance->id }}">Evaluate</button>
+                                            data-bs-target="#evaluate{{ $attendance->id }}">Evaluate</button>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -61,7 +61,7 @@
 
                         <div class="form-group float-right"><br><br>
                             <div class="table__data">Rows per page:</div>
-                            <select class  ="form-control" name="rows" id="maxRows" style="width:90px">
+                            <select class="form-control" name="rows" id="maxRows" style="width:90px">
                                 <option value="5000">Show All Rows</option>
                                 <option value="5">5</option>
                                 <option value="10">10</option>
@@ -70,24 +70,24 @@
                                 <option value="50">50</option>
                                 <option value="70">70</option>
                                 <option value="100">100</option>
-                            </select>			 		
-			  	        </div>
+                            </select>
+                        </div>
 
-			            <div class="pagination-container" >
-				            <nav>
-				                <ul class="pagination-pag">
+                        <div class="pagination-container">
+                            <nav>
+                                <ul class="pagination-pag">
                                     <li data-page="prev">
-								        <span class="page-link" > Prev <span class="sr-only"></span></span>
-								    </li>
-                                        
+                                        <span class="page-link"> Prev <span class="sr-only"></span></span>
+                                    </li>
+
                                     <li data-page="next" id="prev">
-								        <span class="page-link"> Next <span class="sr-only"></span></span>
-								    </li>
-				                </ul>
-				            </nav>                                                            
-			            </div>
+                                        <span class="page-link"> Next <span class="sr-only"></span></span>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
-                </div>               
+                </div>
             </div>
         </div>
     </div>
@@ -106,7 +106,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form class="form-horizontal" method="POST" action="{{ route('admin.assessment', ['id' => $attendance->id]) }}">
+            <form class="form-horizontal" method="POST"
+                action="{{ route('admin.assessment', ['id' => $attendance->id]) }}">
                 @csrf
                 @method('PUT')
                 <div>
@@ -114,9 +115,10 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row mb-3">
-                                <label for="supervisor_ass" class="col-sm-2 col-form-label">Assessment</label>
+                                    <label for="supervisor_ass" class="col-sm-2 col-form-label">Assessment</label>
                                     <div class="col-sm-10">
-                                    <textarea class="form-control" rows="5" name="supervisor_ass" id="supervisor_ass" required></textarea>
+                                        <textarea class="form-control" rows="5" name="supervisor_ass"
+                                            id="supervisor_ass" required></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -124,8 +126,8 @@
                     </div>
                 </div>
                 <div class="profile__overlay__vv">
-                <button type="submit">Submit</button>
-            </div>
+                    <button type="submit">Submit</button>
+                </div>
             </form>
         </div>
     </div>

@@ -19,12 +19,12 @@
                                 <div class="table__search">
                                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
                                 </div>
-                            </div>                          
+                            </div>
                         </div>
 
 
-                        <div class="card-body">
-                            <table class="table-bordered table" id= "table-id">
+                        <div class="table-responsive">
+                            <table class="table" id="table-id">
                                 <thead>
                                     <tr class="table__header">
                                         <th>Date</th>
@@ -36,7 +36,7 @@
                                         <th>Position</th>
                                         <th>Location</th>
                                         <th>Supervisor Assessment</th>
-                                    </tr>                                  
+                                    </tr>
                                 </thead>
 
                                 <tbody id="myTable">
@@ -58,7 +58,7 @@
 
                             <div class="form-group float-right"><br><br>
                                 <div class="table__data">Rows per page:</div>
-                                <select class  ="form-control" name="rows" id="maxRows" style="width:90px">
+                                <select class="form-control" name="rows" id="maxRows" style="width:90px">
                                     <option value="5000">Show All Rows</option>
                                     <option value="5">5</option>
                                     <option value="10">10</option>
@@ -67,39 +67,39 @@
                                     <option value="50">50</option>
                                     <option value="70">70</option>
                                     <option value="100">100</option>
-                                </select>			 		
-			  	            </div>
+                                </select>
+                            </div>
 
-			                <div class="pagination-container" >
-				                <nav>
-				                    <ul class="pagination-pag">
+                            <div class="pagination-container">
+                                <nav>
+                                    <ul class="pagination-pag">
                                         <li data-page="prev">
-								            <span class="page-link" > Prev <span class="sr-only"></span></span>
-								        </li>
-                                        
+                                            <span class="page-link"> Prev <span class="sr-only"></span></span>
+                                        </li>
+
                                         <li data-page="next" id="prev">
-								            <span class="page-link"> Next <span class="sr-only"></span></span>
-								        </li>
-				                    </ul>
-				                </nav>                                                            
-			                </div>
+                                            <span class="page-link"> Next <span class="sr-only"></span></span>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
 
                         </div>
                     </div>
-                </div>               
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
-    var timeElement = document.getElementById('time');
+var timeElement = document.getElementById('time');
 
-    function time() {
-        timeElement.textContent = new Date().toLocaleString();
-    }
+function time() {
+    timeElement.textContent = new Date().toLocaleString();
+}
 
-    setInterval(time, 1000);
+setInterval(time, 1000);
 </script>
 
 <script src="{{asset('js/search.js')}}"></script>
