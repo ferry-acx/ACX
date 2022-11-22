@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::RHfj1ChbVof81m2f',
+            '_route' => 'generated::FbBqb3yWeQN4LvlA',
           ),
           1 => NULL,
           2 => 
@@ -44,7 +44,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::zqnvPyYfpE1RW7Ta',
+            '_route' => 'generated::hNChAh7VJ3wDBmvf',
           ),
           1 => NULL,
           2 => 
@@ -64,7 +64,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::b5Ozh5k8REetbKG2',
+            '_route' => 'generated::s9yJ4jvOxJ0zdcpy',
           ),
           1 => NULL,
           2 => 
@@ -101,7 +101,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::9dyWmtxed8hZMh45',
+            '_route' => 'generated::iF4UqXNuRvKIOaX8',
           ),
           1 => NULL,
           2 => 
@@ -156,7 +156,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::9lNoDyDmhHkG3KMa',
+            '_route' => 'generated::ZNAWsSg3hbsz2a7B',
           ),
           1 => NULL,
           2 => 
@@ -247,7 +247,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::QQ2subTpEX1P1mga',
+            '_route' => 'generated::3t3B6AiWpaGW8yNZ',
           ),
           1 => NULL,
           2 => 
@@ -272,26 +272,6 @@ app('router')->setCompiledRoutes(
           2 => 
           array (
             'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/reports' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.displayReports',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
           ),
           3 => NULL,
           4 => false,
@@ -519,6 +499,42 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'admin.UpdateProfile',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/reports' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.displayReports',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.displayReportsByDate',
           ),
           1 => NULL,
           2 => 
@@ -761,7 +777,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::RHfj1ChbVof81m2f' => 
+    'generated::FbBqb3yWeQN4LvlA' => 
     array (
       'methods' => 
       array (
@@ -782,7 +798,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::RHfj1ChbVof81m2f',
+        'as' => 'generated::FbBqb3yWeQN4LvlA',
       ),
       'fallback' => false,
       'defaults' => 
@@ -798,7 +814,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::zqnvPyYfpE1RW7Ta' => 
+    'generated::hNChAh7VJ3wDBmvf' => 
     array (
       'methods' => 
       array (
@@ -815,13 +831,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:297:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:79:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000045c0000000000000000";}";s:4:"hash";s:44:"jL9O/KbYRurBI2VnrtbeaD2JtkmoAiNrRSrM3UxdBvQ=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000045c0000000000000000";}";s:4:"hash";s:44:"m4Lcw0AF0pXQHd+nem4XDBjsDZJ36eUvxp55JDpmd/c=";}}',
         'namespace' => 'App\\Http\\Controllers',
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::zqnvPyYfpE1RW7Ta',
+        'as' => 'generated::hNChAh7VJ3wDBmvf',
       ),
       'fallback' => false,
       'defaults' => 
@@ -837,7 +853,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::b5Ozh5k8REetbKG2' => 
+    'generated::s9yJ4jvOxJ0zdcpy' => 
     array (
       'methods' => 
       array (
@@ -858,7 +874,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::b5Ozh5k8REetbKG2',
+        'as' => 'generated::s9yJ4jvOxJ0zdcpy',
       ),
       'fallback' => false,
       'defaults' => 
@@ -911,7 +927,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::9dyWmtxed8hZMh45' => 
+    'generated::iF4UqXNuRvKIOaX8' => 
     array (
       'methods' => 
       array (
@@ -931,7 +947,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::9dyWmtxed8hZMh45',
+        'as' => 'generated::iF4UqXNuRvKIOaX8',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1020,7 +1036,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::9lNoDyDmhHkG3KMa' => 
+    'generated::ZNAWsSg3hbsz2a7B' => 
     array (
       'methods' => 
       array (
@@ -1040,7 +1056,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::9lNoDyDmhHkG3KMa',
+        'as' => 'generated::ZNAWsSg3hbsz2a7B',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1239,7 +1255,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::QQ2subTpEX1P1mga' => 
+    'generated::3t3B6AiWpaGW8yNZ' => 
     array (
       'methods' => 
       array (
@@ -1259,7 +1275,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::QQ2subTpEX1P1mga',
+        'as' => 'generated::3t3B6AiWpaGW8yNZ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1296,45 +1312,6 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'reports_all/recordsfilter',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.displayReports' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/reports',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:admin',
-          2 => 'PreventBackHistory',
-        ),
-        'uses' => 'App\\Http\\Controllers\\ReportsController@displayReports',
-        'controller' => 'App\\Http\\Controllers\\ReportsController@displayReports',
-        'as' => 'admin.displayReports',
-        'namespace' => 'App\\Http\\Controllers',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
       ),
       'fallback' => false,
       'defaults' => 
@@ -1900,6 +1877,83 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\AdminController@UpdateProfile',
         'controller' => 'App\\Http\\Controllers\\AdminController@UpdateProfile',
         'as' => 'admin.UpdateProfile',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.displayReports' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/reports',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+          2 => 'PreventBackHistory',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ReportsController@displayReports',
+        'controller' => 'App\\Http\\Controllers\\ReportsController@displayReports',
+        'as' => 'admin.displayReports',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.displayReportsByDate' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/reports',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+          2 => 'PreventBackHistory',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ReportsController@displayReportsByDate',
+        'controller' => 'App\\Http\\Controllers\\ReportsController@displayReportsByDate',
+        'as' => 'admin.displayReportsByDate',
         'namespace' => 'App\\Http\\Controllers',
         'prefix' => '/admin',
         'where' => 
