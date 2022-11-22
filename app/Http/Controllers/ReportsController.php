@@ -32,8 +32,8 @@ class ReportsController extends Controller
             array_push($ids,$single_employee->id);
 
         }
-
-        return view('admin.reports')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids]);
+        \Log::info(date('m/d/Y'));
+        return view('admin.reports')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids,'dates'=> array(date('Y-m-d'),date('Y-m-d'))]);
     }
 
     public function displayReportsByDate(Request $request)
@@ -46,16 +46,9 @@ class ReportsController extends Controller
         ->whereBetween('attendance_date', [$start_date, $end_date])
         ->groupBy(DB::raw("user_id"))
         ->get();
-        $employees= User::orderBy("updated_at","desc")->get();
-        $employee_names = array();
-        $ids = array();
-        foreach ($employees as $single_employee) {
-            array_push($employee_names,$single_employee->first_name);
-            array_push($ids,$single_employee->id);
 
-        }
-        \Log::info(array($start_date,$end_date,$attendance));
-        return view('admin.reports')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids]);
+        //\Log::info(array($start_date,$end_date));
+        return view('admin.reports')->with(['attendances'=> $attendance,'dates'=> array($start_date,$end_date)]);
     }
 
 
@@ -100,7 +93,7 @@ class ReportsController extends Controller
                 ->where('user_id','=', $request->user_id)
                 ->selectRaw('SEC_TO_TIME( SUM( TIME_TO_SEC( `total_time` ) ) ) AS timeSum')
                 ->get();
-        \Log::info($times);
+        //\Log::info($times);
 
 
         return json_encode($times);
@@ -115,7 +108,7 @@ class ReportsController extends Controller
                 ->whereBetween('attendance_date', [$start_date, $end_date])
                 ->groupBy(DB::raw("user_id"))
                 ->get();
-        \Log::info($attedancefilter);
+        //\Log::info($attedancefilter);
 
 
         return json_encode($attedancefilter);

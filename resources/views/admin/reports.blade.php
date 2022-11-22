@@ -27,13 +27,13 @@
                                                     Date</label>
                                                 <div>
                                                     <input name="startDate" id="since-start" type="date"
-                                                        class="form-control mb-3 w-53" autofocus />
+                                                        class="form-control mb-3 w-53" value="{{ $dates[0] }}" autofocus />
                                                 </div>
                                                 <label style="padding-top:5px; padding-left:10px; padding-right:10px"
                                                     class="form-label">End Date</label>
                                                 <div style="padding-right:10px;">
                                                     <input name="endDate" id="until-end" type="date"
-                                                        class="form-control mb-3 w-53" autofocus />
+                                                        class="form-control mb-3 w-53" value="{{ $dates[1] }}"  autofocus />
                                                 </div>
                                                 <div>
                                                     <button type="submit" class="btn btn-warning" id="">Execute</button>
