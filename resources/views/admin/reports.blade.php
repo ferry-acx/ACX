@@ -182,7 +182,6 @@
                 data: {
                     start_date: start_date,
                     end_date: end_date,
-                    user_id: id
                 },
                 success: function(data) {
                     const res = JSON.parse(data);
