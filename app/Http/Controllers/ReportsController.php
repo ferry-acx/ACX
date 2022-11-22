@@ -54,6 +54,7 @@ class ReportsController extends Controller
             array_push($ids,$single_employee->id);
 
         }
+        \Log::info($attendance);
 
         return view('admin.reports')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids]);
     }

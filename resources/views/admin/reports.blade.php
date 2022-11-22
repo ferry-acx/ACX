@@ -19,27 +19,28 @@
                                     Hours</h5>
                                 <div class="table__item">
                                     <div class="table__search">
-                                        <form method="post" action="{{ route('displayReportsByDate') }}">
+                                    <input class="form-control mb-3 w-20" style="margin-right:10px" id="myInput"
+                                                type="text" placeholder="Search.." width="10%">
+                                        <form method="post" action="{{ route('admin.displayReportsByDate') }}">
                                             @csrf
-                                            <div class="input-group">
-                                                <input class="form-control mb-3 w-20" style="margin-right:10px"
-                                                    id="myInput" type="text" placeholder="Search.." width="10%">
-                                                <label class="form-label"
-                                                    style="padding-top:5px; padding-left:10px; padding-right:10px">Start
-                                                    Date</label>
-                                                <div>
-                                                    <input name="startDate" id="since-start" type="date"
-                                                        class="form-control mb-3 w-53" autofocus />
-                                                </div>
-                                                <label style="padding-top:5px; padding-left:10px; padding-right:10px"
-                                                    class="form-label">End Date</label>
-                                                <div style="padding-right:10px;">
-                                                    <input name="endDate" id="until-end" type="date"
-                                                        class="form-control mb-3 w-53" autofocus />
-                                                </div>
-                                                <div>
-                                                    <button type="submit" class="btn btn-warning" id="">Execute</button>
-                                                </div>
+                                        <div class="input-group">
+                            
+                                            <label class="form-label"
+                                                style="padding-top:5px; padding-left:10px; padding-right:10px">Start
+                                                Date</label>
+                                            <div>
+                                                <input name="startDate" id="since-start" type="date"
+                                                    class="form-control mb-3 w-53" autofocus />
+                                            </div>
+                                            <label style="padding-top:5px; padding-left:10px; padding-right:10px"
+                                                class="form-label">End Date</label>
+                                            <div style="padding-right:10px;">
+                                                <input name="endDate" id="until-end" type="date"
+                                                    class="form-control mb-3 w-53" autofocus />
+                                            </div>
+                                            <div>
+                                                <button type="submit" class="btn btn-warning" id="">Execute</button>
+                                            </div>
 
                                             </div>
                                         </form>
