@@ -39,8 +39,8 @@ class ReportsController extends Controller
     public function displayReportsByDate(Request $request)
     {
 
-        $start_date = $request->start_date;
-        $end_date = $request->end_date;
+        $start_date = $request->startDate;
+        $end_date = $request->endDate;
 
         $attendance = Attendance::select("*", DB::raw("SEC_TO_TIME( SUM( TIME_TO_SEC( total_time ) ) ) AS timeSum"))
         ->whereBetween('attendance_date', [$start_date, $end_date])
@@ -54,8 +54,7 @@ class ReportsController extends Controller
             array_push($ids,$single_employee->id);
 
         }
-        \Log::info($attendance);
-
+        \Log::info(array($start_date,$end_date,$attendance));
         return view('admin.reports')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids]);
     }
 
