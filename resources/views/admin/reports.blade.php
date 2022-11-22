@@ -134,9 +134,9 @@
                 success: function(data) {
                     const res = JSON.parse(data);
                     $("#myTable").empty();
-                    let html='';
+                    let html = '';
                     res.forEach(info => {
-                        html+= `
+                        html += `
                             <tr class="table__row">
                                 <td></td>
                                 <td></td>
