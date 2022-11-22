@@ -93,10 +93,10 @@ class ReportsController extends Controller
                 ->whereBetween('attendance_date', [$start_date, $end_date])
                 ->groupBy(DB::raw("user_id"))
                 ->get();
-        \Log::info($times);
+        \Log::info($attedancefilter);
 
 
-        return json_encode($times);
+        return json_encode($attedancefilter);
 
     }
 }

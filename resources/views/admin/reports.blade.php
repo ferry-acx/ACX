@@ -130,11 +130,21 @@
                 },
                 success: function(data) {
                     const res = JSON.parse(data);
-                    if (res.length == 0) {
-                        $("#totalHrs").val('0');
-                    } else {
-                        $("#totalHrs").val(res[0].timeSum)
-                    }
+                    $("#myTable").empty();
+                    let html='';
+                    res.forEach(info => {
+                        html+= `
+                            <tr class="table__row">
+                                <td></td>
+                                <td></td>
+                                <td>${info.timeSum}</td>
+                            </tr>
+                            `;
+
+                        //console.log(info)
+                    });
+                    $("#myTable").html(html);
+                    console.log(html);
                 }
             });
         })
