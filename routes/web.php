@@ -67,13 +67,14 @@ Route::prefix('admin')->name('admin.')->group(function(){
       Route::put('/attendance/{id}', [AttendanceController::class, 'assessment'])->name('assessment');
       Route::get('/homeAdmin',[AdminController::class,'dataAtt'])->name('dataAtt');
       Route::post('/UpdateProfile', [AdminController::class, 'UpdateProfile'])->name('UpdateProfile');
-      
+
       Route::view('/reports', 'admin.reports')->name('reports');
       Route::get('/reports',[ReportsController::class,'displayReports'])->name('displayReports');
+      Route::post('/reports',[ReportsController::class,'displayReportsByDate'])->name('displayReportsByDate');
 
       Route::view('/reports_all', 'admin.reports_all')->name('reports_all');
       Route::get('/reports_all',[ReportsController::class,'displayAllReports'])->name('displayAllReports');
-      
+
 
       Route::view('/employee', 'admin.employee')->name('employee');
       Route::get('/generatePDF', [PDFController::class, 'generatePDF'])->name('generatePDF');
