@@ -22,7 +22,6 @@ class PDFController extends Controller {
             'attendances' => Attendance::select("*", DB::raw("SEC_TO_TIME( SUM( TIME_TO_SEC( total_time ) ) ) AS timeSum"))
             ->groupBy(DB::raw("user_id"))
             ->get()
-
         ])->setPaper('a4','portrait')->save('myPDF.pdf');
 
         
