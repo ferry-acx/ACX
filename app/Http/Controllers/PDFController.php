@@ -68,6 +68,8 @@ class PDFController extends Controller {
         
         return $pdf->download('Attendance Report-Month.pdf');
 
+
+        //per year
     }
 
 }

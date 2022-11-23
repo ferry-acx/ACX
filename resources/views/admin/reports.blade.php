@@ -48,10 +48,13 @@
                                         <div>
                                             <a class=" btn btn-success me-md-2"
                                                 href="{{ route('admin.generatePDF') }}">Export
-                                                PDF - 15 Days</a>
+                                                PDF - Week</a>
                                             <a class="btn btn-secondary me-md-2"
                                                 href="{{ route('admin.generatePDF2') }}">Export
                                                 PDF - Month </a>
+                                            <a class="btn btn-primary me-md-2"
+                                                href="{{ route('admin.generatePDF3') }}">Export
+                                                PDF - Year</a>
                                         </div>
 
                                     </div>
