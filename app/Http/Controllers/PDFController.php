@@ -18,12 +18,17 @@ class PDFController extends Controller {
 
     public function generatePDF(){
 
+        //kinda working - per week only
+        $start_date = Carbon::now()->startOfWeek()->format('Y-m-d');
+        $end_date = Carbon::now()->endOfWeek()->format('Y-m-d');
+
         $pdf = PDF::loadView('admin.myPDF', [
+            
             'attendances' => Attendance::select("*", DB::raw("SEC_TO_TIME( SUM( TIME_TO_SEC( total_time ) ) ) AS timeSum"))
+            ->whereBetween('attendance_date', [$start_date, $end_date])
             ->groupBy(DB::raw("user_id"))
             ->get()
         ])->setPaper('a4','portrait')->save('myPDF.pdf');
-
         
         return $pdf->download('Attendance Report.pdf');
 
