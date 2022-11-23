@@ -58,7 +58,10 @@ class ReportsController extends Controller
     }
 
     public function displayAllReports()
-    {
+    {   
+        $attendance_today = Attendance::whereDate('created_at', Carbon::today())->get();
+        $attendance_month = Attendance::whereMonth('created_at', Carbon::now()->month)->get();
+        
         $attendance = Attendance::select("*", DB::raw("SEC_TO_TIME( SUM( TIME_TO_SEC( total_time ) ) ) AS timeSum"))
         ->groupBy(DB::raw("user_id"))
         ->get();
@@ -71,7 +74,7 @@ class ReportsController extends Controller
 
         }
 
-        return view('admin.reports_all')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids]);
+        return view('admin.reports_all')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids, 'attendances_today'=> $attendance_today,'attendances_month'=> $attendance_month ]);
     }
 
 
