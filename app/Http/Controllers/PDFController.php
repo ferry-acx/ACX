@@ -26,7 +26,7 @@ class PDFController extends Controller {
             'attendances' => Attendance::where('created_at', '>=', $date)->get()
         ])->setPaper('a4','portrait')->save('myPDF.pdf');
         
-        return $pdf->download('Attendance Report.pdf');
+        return $pdf->download('Attendance Report-15 Days.pdf');
 
     }
 
@@ -39,7 +39,7 @@ class PDFController extends Controller {
             'attendances' => Attendance::whereMonth('created_at', Carbon::now()->month)->get()
         ])->setPaper('a4','portrait')->save('myPDF.pdf');
         
-        return $pdf->download('Attendance Report.pdf');
+        return $pdf->download('Attendance Report-Month.pdf');
 
     }
 
@@ -53,7 +53,7 @@ class PDFController extends Controller {
             'attendances' => Attendance::whereYear('created_at', Carbon::now()->year)->get()
         ])->setPaper('a4','portrait')->save('myPDF.pdf');
         
-        return $pdf->download('Attendance Report.pdf');
+        return $pdf->download('Attendance Report-Year.pdf');
 
     }
 
