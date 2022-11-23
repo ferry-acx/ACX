@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::gOwD4jqhorR01nRA',
+            '_route' => 'generated::exhPf034L5fKpdQB',
           ),
           1 => NULL,
           2 => 
@@ -44,7 +44,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::PPf0t3CZurzzlMjJ',
+            '_route' => 'generated::H0BP2pasB6qtzGsZ',
           ),
           1 => NULL,
           2 => 
@@ -64,7 +64,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::mEOKRYSE1LR84Do5',
+            '_route' => 'generated::RASg45RhPQS2J2ep',
           ),
           1 => NULL,
           2 => 
@@ -101,7 +101,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::CffaIOqH265LgFgS',
+            '_route' => 'generated::r06ffDRVXDyk1DEi',
           ),
           1 => NULL,
           2 => 
@@ -156,7 +156,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::kDStI8sw5iff8wPr',
+            '_route' => 'generated::7N8gR23aHVncJn3G',
           ),
           1 => NULL,
           2 => 
@@ -247,7 +247,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::S7UThsFkDYLL3vVT',
+            '_route' => 'generated::VIqpHTi5o2Q6RHRB',
           ),
           1 => NULL,
           2 => 
@@ -603,6 +603,26 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/generatePDF' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.generatePDF',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/admin/generatePDF1' => 
       array (
         0 => 
@@ -797,7 +817,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::gOwD4jqhorR01nRA' => 
+    'generated::exhPf034L5fKpdQB' => 
     array (
       'methods' => 
       array (
@@ -818,7 +838,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::gOwD4jqhorR01nRA',
+        'as' => 'generated::exhPf034L5fKpdQB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -834,7 +854,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::PPf0t3CZurzzlMjJ' => 
+    'generated::H0BP2pasB6qtzGsZ' => 
     array (
       'methods' => 
       array (
@@ -857,7 +877,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::PPf0t3CZurzzlMjJ',
+        'as' => 'generated::H0BP2pasB6qtzGsZ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -873,7 +893,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::mEOKRYSE1LR84Do5' => 
+    'generated::RASg45RhPQS2J2ep' => 
     array (
       'methods' => 
       array (
@@ -894,7 +914,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::mEOKRYSE1LR84Do5',
+        'as' => 'generated::RASg45RhPQS2J2ep',
       ),
       'fallback' => false,
       'defaults' => 
@@ -947,7 +967,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::CffaIOqH265LgFgS' => 
+    'generated::r06ffDRVXDyk1DEi' => 
     array (
       'methods' => 
       array (
@@ -967,7 +987,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::CffaIOqH265LgFgS',
+        'as' => 'generated::r06ffDRVXDyk1DEi',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1056,7 +1076,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::kDStI8sw5iff8wPr' => 
+    'generated::7N8gR23aHVncJn3G' => 
     array (
       'methods' => 
       array (
@@ -1076,7 +1096,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::kDStI8sw5iff8wPr',
+        'as' => 'generated::7N8gR23aHVncJn3G',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1275,7 +1295,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::S7UThsFkDYLL3vVT' => 
+    'generated::VIqpHTi5o2Q6RHRB' => 
     array (
       'methods' => 
       array (
@@ -1295,7 +1315,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::S7UThsFkDYLL3vVT',
+        'as' => 'generated::VIqpHTi5o2Q6RHRB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2054,6 +2074,45 @@ app('router')->setCompiledRoutes(
         'as' => 'admin.display',
         'namespace' => 'App\\Http\\Controllers',
         'prefix' => 'admin/employee',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.generatePDF' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/generatePDF',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+          2 => 'PreventBackHistory',
+        ),
+        'uses' => 'App\\Http\\Controllers\\PDFController@generatePDF',
+        'controller' => 'App\\Http\\Controllers\\PDFController@generatePDF',
+        'as' => 'admin.generatePDF',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => '/admin',
         'where' => 
         array (
         ),

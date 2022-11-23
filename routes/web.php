@@ -77,6 +77,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 
       Route::view('/employee', 'admin.employee')->name('employee');
+      Route::get('/generatePDF', [PDFController::class, 'generatePDF'])->name('generatePDF');
       Route::get('/generatePDF1', [PDFController::class, 'generatePDF1'])->name('generatePDF1');
       Route::get('/generatePDF2', [PDFController::class, 'generatePDF2'])->name('generatePDF2');
       Route::get('/generatePDF3', [PDFController::class, 'generatePDF3'])->name('generatePDF3');
