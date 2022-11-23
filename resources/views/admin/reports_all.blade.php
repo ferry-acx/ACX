@@ -48,6 +48,9 @@
                                 </div>
 
                                 <div class="table-responsive">
+                                <h5 style="color: black; padding-top: 8px; padding-right: 50px;">Employee
+                                    Attendances
+                                </h5>
                                     <table class="table" id="table-id">
                                         <thead>
                                             <tr class="table__header">
