@@ -27,13 +27,15 @@
                                                     Date</label>
                                                 <div>
                                                     <input name="startDate" id="since-start" type="date"
-                                                        class="form-control mb-3 w-53" value="{{ $dates[0] }}" autofocus />
+                                                        class="form-control mb-3 w-53" value="{{ $dates[0] }}"
+                                                        autofocus />
                                                 </div>
                                                 <label style="padding-top:5px; padding-left:10px; padding-right:10px"
                                                     class="form-label">End Date</label>
                                                 <div style="padding-right:10px;">
                                                     <input name="endDate" id="until-end" type="date"
-                                                        class="form-control mb-3 w-53" value="{{ $dates[1] }}"  autofocus />
+                                                        class="form-control mb-3 w-53" value="{{ $dates[1] }}"
+                                                        autofocus />
                                                 </div>
                                                 <div>
                                                     <button type="submit" class="btn btn-warning" id="">Execute</button>
@@ -41,12 +43,20 @@
 
                                             </div>
                                         </form>
-                                        <div>
-                                        <input class="form-control mb-3 w-20" style="margin-right:10px" id="myInput"
+                                        <input class=" form-control mb-3 w-20" style="margin-right:10px" id="myInput"
                                             type="text" placeholder="Search.." width="10%">
-                                            <a class="btn btn-success" href="{{ route('admin.generatePDF') }}">Export
-                                                PDF</a>
+                                        <div>
+                                            <a class=" btn btn-success me-md-2"
+                                                href="{{ route('admin.generatePDF') }}">Export
+                                                PDF - 15 Days</a>
+                                            <a class="btn btn-secondary me-md-2"
+                                                href="{{ route('admin.generatePDF') }}">Export
+                                                PDF - Month </a>
+                                            <a class="btn btn-primary me-md-2"
+                                                href="{{ route('admin.generatePDF') }}">Export
+                                                PDF - Year</a>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
