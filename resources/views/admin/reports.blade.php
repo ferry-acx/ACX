@@ -47,13 +47,13 @@
                                             type="text" placeholder="Search.." width="10%">
                                         <div>
                                             <a class=" btn btn-success me-md-2"
-                                                href="{{ route('admin.generatePDF') }}">Export
+                                                href="{{ route('admin.generatePDF1') }}">Export
                                                 PDF - 15 Days</a>
                                             <a class="btn btn-secondary me-md-2"
-                                                href="{{ route('admin.generatePDF') }}">Export
+                                                href="{{ route('admin.generatePDF2') }}">Export
                                                 PDF - Month </a>
                                             <a class="btn btn-primary me-md-2"
-                                                href="{{ route('admin.generatePDF') }}">Export
+                                                href="{{ route('admin.generatePDF3') }}">Export
                                                 PDF - Year</a>
                                         </div>
 

@@ -16,10 +16,14 @@ class PDFController extends Controller {
         return view('admin.reports');
     }
 
-    public function generatePDF(){
+
+    // 15 days
+    public function generatePDF1(){
+
+        $date = Carbon::now()->subDays(15);
 
         $pdf = PDF::loadView('admin.myPDF', [
-            'attendances' => Attendance::all()
+            'attendances' => Attendance::where('created_at', '>=', $date)->get()
         ])->setPaper('a4','portrait')->save('myPDF.pdf');
         
         return $pdf->download('Attendance Report.pdf');
@@ -27,44 +31,30 @@ class PDFController extends Controller {
     }
 
 
-    // 15 days
-    // public function generatePDF(){
-
-    //     $date = Carbon::now()->subDays(15);
-
-    //     $pdf = PDF::loadView('admin.myPDF', [
-    //         'attendances' => Attendance::where('created_at', '>=', $date)->get()
-    //     ])->setPaper('a4','portrait')->save('myPDF.pdf');
-        
-    //     return $pdf->download('Attendance Report.pdf');
-
-    // }
-
-
 
     // whole month
-    // public function generatePDF(){
+    public function generatePDF2(){
 
-    //     $pdf = PDF::loadView('admin.myPDF', [
-    //         'attendances' => Attendance::whereMonth('created_at', Carbon::now()->month)->get()
-    //     ])->setPaper('a4','portrait')->save('myPDF.pdf');
+        $pdf = PDF::loadView('admin.myPDF', [
+            'attendances' => Attendance::whereMonth('created_at', Carbon::now()->month)->get()
+        ])->setPaper('a4','portrait')->save('myPDF.pdf');
         
-    //     return $pdf->download('Attendance Report.pdf');
+        return $pdf->download('Attendance Report.pdf');
 
-    // }
+    }
 
 
     
 
     // whole year
-    // public function generatePDF(){
+    public function generatePDF3(){
 
-    //     $pdf = PDF::loadView('admin.myPDF', [
-    //         'attendances' => Attendance::whereYear('created_at', Carbon::now()->year)->get()
-    //     ])->setPaper('a4','portrait')->save('myPDF.pdf');
+        $pdf = PDF::loadView('admin.myPDF', [
+            'attendances' => Attendance::whereYear('created_at', Carbon::now()->year)->get()
+        ])->setPaper('a4','portrait')->save('myPDF.pdf');
         
-    //     return $pdf->download('Attendance Report.pdf');
+        return $pdf->download('Attendance Report.pdf');
 
-    // }
+    }
 
 }
