@@ -46,17 +46,6 @@
                                         <input class=" form-control mb-3 w-20" style="margin-right:10px" id="myInput"
                                             type="text" placeholder="Search.." width="10%">
                                         <div>
-                                            <a class=" btn btn-success me-md-2"
-                                                href="{{ route('admin.generatePDF') }}">Export
-                                                PDF - Week</a>
-                                            <a class="btn btn-secondary me-md-2"
-                                                href="{{ route('admin.generatePDF2') }}">Export
-                                                PDF - Month </a>
-                                            <a class="btn btn-primary me-md-2"
-                                                href="{{ route('admin.generatePDF3') }}">Export
-                                                PDF - Year</a>
-                                        </div>
-                                        <div>
                                             <!--TEST-->
                                             <hr>
                                             <div>
