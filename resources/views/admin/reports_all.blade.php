@@ -49,218 +49,85 @@
 
 
                             <div class="container">
-                                <section id="tabs" class="project-tab">
-                                    <div class="col">
-                                        <nav>
-                                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link active" id="nav-attendance_today-tab"
-                                                    data-toggle="tab" href="#nav-reports_today" role="tab"
-                                                    aria-controls="nav-reports_today" aria-selected="true"
-                                                    style="font-weight: bold; color: black">Attendance For
-                                                    The Day</a>
-                                                <a class="nav-item nav-link" id="nav-reports_month-tab"
-                                                    data-toggle="tab" href="#nav-reports_month" role="tab"
-                                                    aria-controls="nav-reports_month" aria-selected="false"
-                                                    style="font-weight: bold; color: black">Attendances For The
-                                                    Month</a>
-                                                <a class="nav-item nav-link" id="nav-reports-tab" data-toggle="tab"
-                                                    href="#nav-reports" role="tab" aria-controls="nav-reports"
-                                                    aria-selected="false" style="font-weight: bold; color: black">All
-                                                    Attendances</a>
-                                            </div>
-                                        </nav>
-                                        <div class="tab-content" id="nav-tabContent">
-                                            <div class="tab-pane fade show active" id="nav-reports_today"
-                                                role="tabpanel" aria-labelledby="nav-reports_today-tab">
-                                                <!-- <form class="d-flex">
-                                                <input class="form-control me-2" type="search" placeholder="Search"
-                                                    aria-label="Search">
-                                            </form> -->
-                                                <div class="table-responsive">
-                                                    <table class="table" id="table-id">
-                                                        <thead>
-                                                            <tr class="table__header">
-                                                                <th class="col-employee_id">Employee ID</th>
-                                                                <th class="col-attendance_date">Date</th>
-                                                                <th class="col-name">Name</th>
-                                                                <th class="col-time_in">Time In</th>
-                                                                <th class="col-time_out">Time Out</th>
-                                                                <th class="col-total_time">Total Hours</th>
-                                                                <th class="col-task">Tasks Done For the Day</th>
-                                                                <th class="col-supervisor_ass">Supervisor Assessment
-                                                                </th>
-                                                            </tr>
-                                                        </thead>
+                                <form class="d-flex">
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                </form>
+                                <div class="table-responsive">
+                                    <table class="table" id="table-id">
+                                        <thead>
+                                            <tr class="table__header">
+                                                <th class="col-employee_id">Employee ID</th>
+                                                <th class="col-attendance_date">Date</th>
+                                                <th class="col-name">Name</th>
+                                                <th class="col-time_in">Time In</th>
+                                                <th class="col-time_out">Time Out</th>
+                                                <th class="col-total_time">Total Hours</th>
+                                                <th class="col-task">Tasks Done For the Day</th>
+                                                <th class="col-supervisor_ass">Supervisor Assessment
+                                                </th>
+                                            </tr>
+                                        </thead>
 
-                                                        <tbody id="myTable">
-                                                            @foreach( $attendances_today as $attendance_today)
-                                                            <tr class="table__row">
-                                                                <td class="col-employee_id">
-                                                                    {{$attendance_today->user->employee_id}}</td>
-                                                                <td class="col-attendance_date">
-                                                                    {{$attendance_today->attendance_date}}
-                                                                </td>
-                                                                <td class="col-name">
-                                                                    {{$attendance_today->user->first_name}}
-                                                                    {{$attendance_today->user->last_name}}</td>
-                                                                <td class="col-time_in">
-                                                                    {{$attendance_today->time_in}} </td>
-                                                                <td class="col-time_out">
-                                                                    {{$attendance_today->time_out}}
-                                                                </td>
-                                                                <td class="col-total_time">
-                                                                    {{$attendance_today->total_time }}
-                                                                </td>
-                                                                <td class="col-task">{{$attendance_today->task}}
-                                                                </td>
-                                                                <td class="col-supervisor_ass">
-                                                                    {{$attendance_today->supervisor_ass}}</td>
-                                                            </tr>
-                                                            @endforeach
-                                                        </tbody>
-                                                    </table>
+                                        <tbody id="myTable">
+                                            @foreach( $attendances_today as $attendance_today)
+                                            <tr class="table__row">
+                                                <td class="col-employee_id">
+                                                    {{$attendance_today->user->employee_id}}</td>
+                                                <td class="col-attendance_date">
+                                                    {{$attendance_today->attendance_date}}
+                                                </td>
+                                                <td class="col-name">
+                                                    {{$attendance_today->user->first_name}}
+                                                    {{$attendance_today->user->last_name}}</td>
+                                                <td class="col-time_in">
+                                                    {{$attendance_today->time_in}} </td>
+                                                <td class="col-time_out">
+                                                    {{$attendance_today->time_out}}
+                                                </td>
+                                                <td class="col-total_time">
+                                                    {{$attendance_today->total_time }}
+                                                </td>
+                                                <td class="col-task">{{$attendance_today->task}}
+                                                </td>
+                                                <td class="col-supervisor_ass">
+                                                    {{$attendance_today->supervisor_ass}}</td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
 
-                                                    <div class="form-group float-right"><br><br>
-                                                        <div class="table__data">Rows per page:</div>
-                                                        <select class="form-control" name="rows" id="maxRows"
-                                                            style="width:90px">
-                                                            <option value="5000">Show All Rows</option>
-                                                            <option value="5">5</option>
-                                                            <option value="10">10</option>
-                                                            <option value="15">15</option>
-                                                            <option value="20">20</option>
-                                                            <option value="50">50</option>
-                                                            <option value="70">70</option>
-                                                            <option value="100">100</option>
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="pagination-container">
-                                                        <nav>
-                                                            <ul class="pagination-pag">
-                                                                <li data-page="prev">
-                                                                    <span class="page-link"> Prev <span
-                                                                            class="sr-only"></span></span>
-                                                                </li>
-
-                                                                <li data-page="next" id="prev">
-                                                                    <span class="page-link"> Next <span
-                                                                            class="sr-only"></span></span>
-                                                                </li>
-                                                            </ul>
-
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="nav-reports_month" role="tabpanel"
-                                                    aria-labelledby="nav-reports_month-tab">
-                                                    <!-- <form class="d-flex">
-                                                    <input class="form-control me-2" type="search" placeholder="Search"
-                                                        aria-label="Search" width=50%>
-                                                </form> -->
-                                                    <div class="table-responsive">
-                                                        <table class="table" id="table-id">
-                                                            <thead>
-                                                                <tr class="table__header">
-                                                                    <th class="col-employee_id">Employee ID</th>
-                                                                    <th class="col-attendance_date">Date</th>
-                                                                    <th class="col-name">Name</th>
-                                                                    <th class="col-time_in">Time In</th>
-                                                                    <th class="col-time_out">Time Out</th>
-                                                                    <th class="col-total_time">Total Hours</th>
-                                                                    <th class="col-task">Tasks Done For the Day</th>
-                                                                    <th class="col-supervisor_ass">Supervisor
-                                                                        Assessment
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-
-                                                            <tbody id="myTable">
-                                                                @foreach( $attendances_month as $attendance_month)
-                                                                <tr class="table__row">
-                                                                    <td class="col-employee_id">
-                                                                        {{$attendance_month->user->employee_id}}
-                                                                    </td>
-                                                                    <td class="col-attendance_date">
-                                                                        {{$attendance_month->attendance_date}}
-                                                                    </td>
-                                                                    <td class="col-name">
-                                                                        {{$attendance_month->user->first_name}}
-                                                                        {{$attendance_month->user->last_name}}</td>
-                                                                    <td class="col-time_in">
-                                                                        {{$attendance_month->time_in}}
-                                                                    </td>
-                                                                    <td class="col-time_out">
-                                                                        {{$attendance_month->time_out}}
-                                                                    </td>
-                                                                    <td class="col-total_time">
-                                                                        {{$attendance_month->total_time }}
-                                                                    </td>
-                                                                    <td class="col-task">{{$attendance_month->task}}
-                                                                    </td>
-                                                                    <td class="col-supervisor_ass">
-                                                                        {{$attendance_month->supervisor_ass}}</td>
-                                                                </tr>
-                                                                @endforeach
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="nav-attendances" role="tabpanel"
-                                                    aria-labelledby="nav-attendances-tab">
-                                                    <!-- <form class="d-flex">
-                                                    <input class="form-control me-2" type="search" placeholder="Search"
-                                                        aria-label="Search" width=50%>
-                                                </form> -->
-                                                    <div class="table-responsive">
-                                                        <table class="table" id="table-id">
-                                                            <thead>
-                                                                <tr class="table__header">
-                                                                    <th class="col-employee_id">Employee ID</th>
-                                                                    <th class="col-attendance_date">Date</th>
-                                                                    <th class="col-name">Name</th>
-                                                                    <th class="col-time_in">Time In</th>
-                                                                    <th class="col-time_out">Time Out</th>
-                                                                    <th class="col-total_time">Total Hours</th>
-                                                                    <th class="col-task">Tasks Done For the Day</th>
-                                                                    <th class="col-supervisor_ass">Supervisor
-                                                                        Assessment
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-
-                                                            <tbody id="myTable">
-                                                                @foreach( $attendances as $attendance)
-                                                                <tr class="table__row">
-                                                                    <td class="col-employee_id">
-                                                                        {{$attendance->user->employee_id}}</td>
-                                                                    <td class="col-attendance_date">
-                                                                        {{$attendance->attendance_date}}
-                                                                    </td>
-                                                                    <td class="col-name">
-                                                                        {{$attendance->user->first_name}}
-                                                                        {{$attendance->user->last_name}}</td>
-                                                                    <td class="col-time_in">{{$attendance->time_in}}
-                                                                    </td>
-                                                                    <td class="col-time_out">
-                                                                        {{$attendance->time_out}} </td>
-                                                                    <td class="col-total_time">
-                                                                        {{$attendance->total_time }}
-                                                                    </td>
-                                                                    <td class="col-task">{{$attendance->task}} </td>
-                                                                    <td class="col-supervisor_ass">
-                                                                        {{$attendance->supervisor_ass}}</td>
-                                                                </tr>
-                                                                @endforeach
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="form-group float-right"><br><br>
+                                        <div class="table__data">Rows per page:</div>
+                                        <select class="form-control" name="rows" id="maxRows" style="width:90px">
+                                            <option value="5000">Show All Rows</option>
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="70">70</option>
+                                            <option value="100">100</option>
+                                        </select>
                                     </div>
-                                </section>
+
+                                    <div class="pagination-container">
+                                        <nav>
+                                            <ul class="pagination-pag">
+                                                <li data-page="prev">
+                                                    <span class="page-link"> Prev <span class="sr-only"></span></span>
+                                                </li>
+
+                                                <li data-page="next" id="prev">
+                                                    <span class="page-link"> Next <span class="sr-only"></span></span>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
