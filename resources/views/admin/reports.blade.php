@@ -56,6 +56,25 @@
                                                 href="{{ route('admin.generatePDF3') }}">Export
                                                 PDF - Year</a>
                                         </div>
+                                        <div>
+                                            <!--TEST-->
+                                            <hr>
+                                            <div>
+                                                <form method="get" action="{{ route('admin.generatePDF') }}">
+                                                    @csrf
+                                                    <div class="input-group">
+                                                    <select class="form-control" name="option" id="option">
+                                                        <option value="week">Week</option>
+                                                        <option value="month">Month</option>
+                                                        <option value="year">Year</option>
+                                                    </select>
+                                                    <button class="btn btn-outline-primary" type="submit">EXPORT</button>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                            <!--END TEST-->
+                                        </div>
 
                                     </div>
                                 </div>
