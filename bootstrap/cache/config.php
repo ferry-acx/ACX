@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:HxvlDuub4RwfR2i6q6DcXqOL8/5BLpMlAhvNaKD9b4w=',
+    'key' => 'base64:pxg+9uZy7aRU67yaiLbK4CFhG8cGwbkQSvHaOuz07no=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -213,7 +213,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\storage\\framework/cache/data',
+        'path' => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -296,7 +296,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'acx',
+        'database' => 'acx-attendance-system',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -306,7 +306,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'acx',
+        'database' => 'acx-attendance-system',
         'username' => 'root',
         'password' => '',
         'unix_socket' => '',
@@ -326,7 +326,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'acx',
+        'database' => 'acx-attendance-system',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -341,7 +341,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'acx',
+        'database' => 'acx-attendance-system',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -383,10 +383,10 @@
     'convert_entities' => true,
     'options' => 
     array (
-      'font_dir' => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\storage\\fonts',
-      'font_cache' => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\storage\\fonts',
-      'temp_dir' => 'C:\\Users\\ghea\\AppData\\Local\\Temp',
-      'chroot' => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX',
+      'font_dir' => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\storage\\fonts',
+      'font_cache' => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\storage\\fonts',
+      'temp_dir' => 'C:\\Users\\ferry\\AppData\\Local\\Temp',
+      'chroot' => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX',
       'allowed_protocols' => 
       array (
         'file://' => 
@@ -431,12 +431,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\storage\\app',
+        'root' => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\storage\\app/public',
+        'root' => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -454,7 +454,7 @@
     ),
     'links' => 
     array (
-      'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\public\\storage' => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\storage\\app/public',
+      'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\public\\storage' => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -489,13 +489,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -546,7 +546,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -612,7 +612,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\resources\\views/vendor/mail',
+        0 => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -717,7 +717,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\storage\\framework/sessions',
+    'files' => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -737,9 +737,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\resources\\views',
+      0 => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\resources\\views',
     ),
-    'compiled' => 'C:\\Users\\ghea\\OneDrive\\Documents\\GitHub\\ACX\\storage\\framework\\views',
+    'compiled' => 'C:\\Users\\ferry\\Documents\\GitHub\\ACX\\storage\\framework\\views',
   ),
   'flare' => 
   array (
