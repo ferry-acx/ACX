@@ -46,9 +46,17 @@ class ReportsController extends Controller
         ->whereBetween('attendance_date', [$start_date, $end_date])
         ->groupBy(DB::raw("user_id"))
         ->get();
+        $employees= User::orderBy("updated_at","desc")->get();
+        $employee_names = array();
+        $ids = array();
+        foreach ($employees as $single_employee) {
+            array_push($employee_names,$single_employee->first_name);
+            array_push($ids,$single_employee->id);
+
+        }
 
         //\Log::info(array($start_date,$end_date));
-        return view('admin.reports')->with(['attendances'=> $attendance,'dates'=> array($start_date,$end_date)]);
+        return view('admin.reports')->with(['employees' => $employee_names,'ids' => $ids, 'attendances'=> $attendance,'dates'=> array($start_date,$end_date)]);
     }
 
 
@@ -64,7 +72,7 @@ class ReportsController extends Controller
                 $attendance = Attendance::where('attendance_date',Carbon::now()->format('Y-m-d'))->get();
                 break;
             case 'month':
-                $attendance = Attendance::whereMonth('created_at', Carbon::now()->month)->get();
+                $attendance = Attendance::whereMonth('attendance_date', Carbon::now()->month)->get();
                 break;
             case 'all':
                 $attendance = Attendance::orderByDesc('updated_at')->get();

@@ -166,7 +166,7 @@
                                             <div class="row mb-3">
                                                 <label class="form-label">Total Hours Rendered</label>
                                                 <div class="input-group">
-                                                    <button class="btn btn-warning" id="gethrs-btn">Execute</button>
+                                                    <button class="btn btn-warning" id="gethrs-btn">Check</button>
                                                     <input name="totalHrs" id="totalHrs" class="form-control" readonly>
                                                 </div>
                                             </div>
