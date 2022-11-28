@@ -17,7 +17,7 @@
                     <div class="card-header">
                         <div class="card-body">
                             <div class="col">
-                                <h2 class="text-center p-3">Card with Tabs</h2>
+                                <h2 class="text-center p-3">All Reports</h2>
                                 <div>
                                     <form method="get" action="{{ route('admin.displayAllReports') }}">
                                         @csrf
@@ -28,8 +28,7 @@
                                                 <option value="month">Month</option>
                                                 <option value="all">All</option>
                                             </select>
-                                            <button class="btn btn-outline-primary"
-                                                                    type="submit">Display</button>
+                                            <button class="btn btn-outline-primary" type="submit">Display</button>
                                         </div>
                                     </form>
                                 </div>
