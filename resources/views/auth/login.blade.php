@@ -58,15 +58,7 @@
                                 </div>
                             </div>
 
-                            @if (Route::has('password.request'))
-                            <div class="login__recover text-right">
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Recover Password?') }}
-                                </a>
-                            </div>
-                            @endif
-
-                            <div class="form-group row mb-0">
+                            <br><div class="form-group row mb-0">
                                 <div class="col">
                                     <button type="submit" class="btn btn-primary col">
                                         {{ __('Time in') }}
