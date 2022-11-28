@@ -56,7 +56,7 @@
                                 </tbody>
                             </table>
 
-                            <div class="form-group float-right"><br><br>
+                            <div class="form-group float-right" style="margin-right:20px"><br><br>
                                 <div class="table__data">Rows per page:</div>
                                 <select class="form-control" name="rows" id="maxRows" style="width:90px">
                                     <option value="5000">Show All Rows</option>

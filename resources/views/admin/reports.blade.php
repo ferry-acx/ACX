@@ -95,7 +95,7 @@
                                         </tbody>
                                     </table>
 
-                                    <div class="form-group float-right"><br><br>
+                                    <div class="form-group float-right" style="margin-right:20px"><br><br>
                                         <div class="table__data">Rows per page:</div>
                                         <select class="form-control" name="rows" id="maxRows" style="width:90px">
                                             <option value="5000">Show All Rows</option>
@@ -160,12 +160,11 @@
                                                 autofocus />
                                         </div>
 
-                                            <div class="row mb-3">
-                                                <label class="form-label">Total Hours Rendered</label>
-                                                <div class="input-group">
-                                                    <button class="btn btn-warning" id="gethrs-btn">Check</button>
-                                                    <input name="totalHrs" id="totalHrs" class="form-control" readonly>
-                                                </div>
+                                        <div class="row mb-3">
+                                            <label class="form-label">Total Hours Rendered</label>
+                                            <div class="input-group">
+                                                <button class="btn btn-warning" id="gethrs-btn">Check</button>
+                                                <input name="totalHrs" id="totalHrs" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -177,6 +176,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 <script type="text/javascript">
 var timeElement = document.getElementById('time');
