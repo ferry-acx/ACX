@@ -50,13 +50,17 @@
 
                                                 </div>
                                             </form>
-                                            <div>
+                                            <div><br>
                                                 <!--TEST-->
                                                 <div>
                                                     <form method="get" action="{{ route('admin.generatePDF') }}">
                                                         @csrf
+                                                        <label class="form-label">Choose
+                                                    Data to Export</label>
                                                         <div class="input-group">
                                                             <select class="form-control" name="option" id="option">
+                                                                <option value="" class="hidden" selected disabled>Choose
+                                                                </option>
                                                                 <option value="week">Week</option>
                                                                 <option value="month">Month</option>
                                                                 <option value="year">Year</option>

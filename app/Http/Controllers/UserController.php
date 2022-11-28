@@ -115,7 +115,7 @@ class UserController extends Controller
         ]);
 
         if(!$validator->passes()){
-            return back()->with('error', 'Incompete fields');
+            return back()->with('error', 'Incomplete fields');
         }else{
              $query = User::find(Auth::user()->id)->update([
                 'username' => $request->username,
