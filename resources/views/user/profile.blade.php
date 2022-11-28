@@ -28,7 +28,7 @@
                                     <label for="user_employee_id" class="col-sm-2 col-form-label">Employee ID</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="user_employee_id"
-                                            value="{{ Auth::user()->employee_id }}" required>
+                                            value="{{ Auth::user()->employee_id }}" required disabled>
                                     </div>
                                 </div>
                                 <div class="form-group row">

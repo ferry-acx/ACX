@@ -244,7 +244,7 @@
                                     <label for="password" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="password"
-                                            value="{{ $employee->password }}" required>
+                                            placeholder="Input Password or Employee ID" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">

@@ -86,7 +86,7 @@ class UserController extends Controller
 
     public function index1()
     {
-        $attendance = Attendance::all()->where('user_id','==', Auth::user()->id)->get();
+        $attendance = Attendance::all()->where('user_id','==', Auth::user()->id);
       
         return view('user.dashboard', [
             'attendances' => $attendance

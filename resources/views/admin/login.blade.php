@@ -16,7 +16,7 @@
                     </div>
 
                     <div class="login__input">
-                    <form action="{{ route('admin.check2') }}" method="post" autocomplete="off">
+                        <form action="{{ route('admin.check2') }}" method="post" autocomplete="off">
                             @if (Session::get('success'))
                             <div class="alert alert-success">
                                 {{ Session::get('success') }}
@@ -32,8 +32,8 @@
                             <div class="form-group row">
                                 <div class="col">
                                     <input id="text" type="username"
-                                        class="form-control @error('username') is-invalid @enderror" name="username" required autocomplete="username" autofocus
-                                        placeholder="Username">
+                                        class="form-control @error('username') is-invalid @enderror" name="username"
+                                        required autocomplete="username" autofocus placeholder="Username">
 
                                     @error('username')
                                     <span class="invalid-feedback" role="alert">
@@ -56,15 +56,7 @@
                                     @enderror
                                 </div>
                             </div>
-
-                            @if (Route::has('password.request'))
-                            <div class="login__recover text-right">
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Recover Password?') }}
-                                </a>
-                            </div>
-                            @endif
-
+                            
                             <div class="form-group row mb-0">
                                 <div class="col">
                                     <button type="submit" class="btn btn-primary col">
