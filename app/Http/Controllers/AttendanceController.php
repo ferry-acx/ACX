@@ -14,7 +14,7 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        $attendance = Attendance::all();
+        $attendance = Attendance::orderByDesc('updated_at')->get();
         return view('admin.attendance')->with(['attendances'=> $attendance]);
     }
 

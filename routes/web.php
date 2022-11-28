@@ -25,8 +25,7 @@ Route::get('/', [Controller::class, 'view']);
 Route::get('/login', [Controller::class, 'login']);
 Auth::routes();
 
-Route::post('/reports_all',[ReportsController::class,'recordsfilter'])->name('reports_all/recordsfilter');
-
+Route::post('/reports',[ReportsController::class,'recordsfilter'])->name('reports/recordsfilter');
 
 Route::prefix('user')->name('user.')->group(function(){
 
@@ -70,18 +69,12 @@ Route::prefix('admin')->name('admin.')->group(function(){
       Route::view('/reports', 'admin.reports')->name('reports');
       Route::get('/reports',[ReportsController::class,'displayReports'])->name('displayReports');
       Route::post('/reports',[ReportsController::class,'displayReportsByDate'])->name('displayReportsByDate');
-
-
+     
       Route::view('/reports_all', 'admin.reports_all')->name('reports_all');
       Route::get('/reports_all',[ReportsController::class,'displayAllReports'])->name('displayAllReports');
-
-
+      
       Route::view('/employee', 'admin.employee')->name('employee');
       Route::get('/generatePDF', [PDFController::class, 'generatePDF'])->name('generatePDF');
-      Route::get('/generatePDF1', [PDFController::class, 'generatePDF1'])->name('generatePDF1');
-      Route::get('/generatePDF2', [PDFController::class, 'generatePDF2'])->name('generatePDF2');
-      Route::get('/generatePDF3', [PDFController::class, 'generatePDF3'])->name('generatePDF3');
-
 
 
       Route::prefix('employee')->group(function(){

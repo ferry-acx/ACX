@@ -43,10 +43,8 @@ class AdminController extends Controller
 
     public function dataAtt()
     {
-        return view('admin.homeAdmin')->with(['attendances'=> Attendance::whereDate('created_at', Carbon::today())->get()]);
+        return view('admin.homeAdmin')->with(['attendances'=> Attendance::where('attendance_date',Carbon::now()->format('Y-m-d'))->get()]);
     }
-
-    
 
     /**
      * Show the application dashboard.

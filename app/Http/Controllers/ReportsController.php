@@ -57,24 +57,23 @@ class ReportsController extends Controller
         return view('admin.reports_all');
     }
 
-    public function displayAllReports()
+    public function displayAllReports(Request $request)
     {   
-        $attendance_today = Attendance::whereDate('created_at', Carbon::today())->get();
-        $attendance_month = Attendance::whereMonth('created_at', Carbon::now()->month)->get();
-        
-        $attendance = Attendance::select("*", DB::raw("SEC_TO_TIME( SUM( TIME_TO_SEC( total_time ) ) ) AS timeSum"))
-        ->groupBy(DB::raw("user_id"))
-        ->get();
-        $employees= User::orderBy("updated_at","desc")->get();
-        $employee_names = array();
-        $ids = array();
-        foreach ($employees as $single_employee) {
-            array_push($employee_names,$single_employee->first_name);
-            array_push($ids,$single_employee->id);
-
+        switch($request->option){
+            case 'today':
+                $attendance = Attendance::where('attendance_date',Carbon::now()->format('Y-m-d'))->get();
+                break;
+            case 'month':
+                $attendance = Attendance::whereMonth('created_at', Carbon::now()->month)->get();
+                break;
+            case 'all':
+                $attendance = Attendance::orderByDesc('updated_at')->get();
+                break;
+            default:
+            $attendance = Attendance::where('attendance_date',Carbon::now()->format('Y-m-d'))->get();
         }
-
-        return view('admin.reports_all')->with(['employees' => $employee_names, 'attendances'=> $attendance, 'ids' => $ids, 'attendances_today'=> $attendance_today,'attendances_month'=> $attendance_month ]);
+        return view('admin.reports_all')
+        ->with(['attendances'=> $attendance]);
     }
 
 

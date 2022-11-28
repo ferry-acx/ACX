@@ -19,7 +19,7 @@
                                 <div class="table__search">
                                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
                                 </div>
-                            </div>
+                            </div><br>
                         </div>
 
 

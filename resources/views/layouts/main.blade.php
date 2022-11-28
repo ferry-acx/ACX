@@ -128,7 +128,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item profile__overlay__cursor" href="/admin/reports_all" >All Reports</a>
-                                <a class="dropdown-item profile__overlay__cursor" href="/admin/reports" >Filtered Reports</a>
+                                <a class="dropdown-item profile__overlay__cursor" href="/admin/reports" >Reports w/ Total Hours</a>
                             </div>
                         </li>
 

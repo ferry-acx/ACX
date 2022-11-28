@@ -6,7 +6,7 @@
     <table>
         <tr class="table__header">
             <th>Name</th>
-            <th>Total Hours</th>
+            <th>Total Hours (hour-min-sec)</th>
             <th>Signature</th>
         </tr>
 
