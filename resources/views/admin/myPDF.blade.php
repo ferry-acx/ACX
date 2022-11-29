@@ -3,7 +3,6 @@
 @section('content')
 <br><br>
 <div>
-<p>{{$dates[0]}} {{$dates[1]}}</p>
     <table>
         <tr class="table__header">
             <th>Name</th>

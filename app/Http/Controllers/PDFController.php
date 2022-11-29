@@ -27,7 +27,8 @@ class PDFController extends Controller {
             ->whereBetween('attendance_date', [$start, $end])
             ->groupBy(DB::raw("user_id"))
             ->get()
-        ,'dates'=> array($start,$end)])->setPaper('a4','portrait')->save('myPDF.pdf');
+        ,'dates'=> array($start,$end)
+        ])->setPaper('a4','portrait')->save('myPDF.pdf');
 
         \Log::info(array($start,$end));
         return $pdf->download('Attendance Report.pdf');

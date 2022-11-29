@@ -43,10 +43,11 @@ tr:nth-child(even) {
 </style>
 
 <body>
-
     <img src="{{public_path('logo-acx.jpg')}}" alt="ACX Logo" width="350px" height="100px" style="margin-left: 25%;">
     <div class="text-header">
-        <p style="font-size: 20px; font-weight: bolder;">Employee Reports</p>
+        <p style="font-size: 30px; font-family: arial, sans-serif; font-weight: bolder;">Employee Reports</p>
+        <p style="font-size: 15px; font-family: arial, sans-serif; font-weight: bolder; margin-top:-10px">{{$dates[0]}}
+            — {{$dates[1]}}</p>
     </div>
 
     <main class="">

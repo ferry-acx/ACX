@@ -24,13 +24,9 @@
                                             <input class=" form-control mb-3 w-20" style="margin-right:10px"
                                                 id="myInput" type="text" placeholder="Search.." width="10%">
                                         </div>
-                                    </div>
-                                    <div><br>
-                                        <!--TEST-->
-                                        <div>
-                                            <form method="get" action="{{ route('admin.generatePDF') }}">
-                                                @csrf
-                                                <div class="input-group">
+                                        <form method="get" action="{{ route('admin.generatePDF') }}">
+                                            @csrf
+                                            <div class="input-group">
                                                 <label class="form-label"
                                                     style="padding-top:5px; padding-left:10px; padding-right:10px">Start
                                                     Date</label>
@@ -49,15 +45,10 @@
                                                 <div>
                                                     <button type="submit" class="btn btn-warning" id="">Export</button>
                                                 </div>
-
                                             </div>
-                                            </form>
-                                        </div>
-                                        <!--END TEST-->
+                                        </form>
                                     </div>
-
-                                </div>
-                                <br>
+                                </div><br>
                                 <div class="table-responsive">
                                     <table class="table" id="table-id">
                                         <thead>
