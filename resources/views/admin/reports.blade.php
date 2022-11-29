@@ -24,9 +24,13 @@
                                             <input class=" form-control mb-3 w-20" style="margin-right:10px"
                                                 id="myInput" type="text" placeholder="Search.." width="10%">
                                         </div>
-                                        <form method="post" action="{{ route('admin.displayReportsByDate') }}">
-                                            @csrf
-                                            <div class="input-group">
+                                    </div>
+                                    <div><br>
+                                        <!--TEST-->
+                                        <div>
+                                            <form method="get" action="{{ route('admin.generatePDF') }}">
+                                                @csrf
+                                                <div class="input-group">
                                                 <label class="form-label"
                                                     style="padding-top:5px; padding-left:10px; padding-right:10px">Start
                                                     Date</label>
@@ -43,30 +47,10 @@
                                                         autofocus />
                                                 </div>
                                                 <div>
-                                                    <button type="submit" class="btn btn-warning" id="">Execute</button>
+                                                    <button type="submit" class="btn btn-warning" id="">Export</button>
                                                 </div>
 
                                             </div>
-                                        </form>
-                                    </div>
-                                    <div><br>
-                                        <!--TEST-->
-                                        <div>
-                                            <form method="get" action="{{ route('admin.generatePDF') }}">
-                                                @csrf
-                                                <label class="form-label">Choose
-                                                    Data to Export</label>
-                                                <div class="input-group">
-                                                    <select class="form-control" name="option" id="option">
-                                                        <option value="" class="hidden" selected disabled>Choose
-                                                        </option>
-                                                        <option value="week">Week</option>
-                                                        <option value="month">Month</option>
-                                                        <option value="year">Year</option>
-                                                    </select>
-                                                    <button class="btn btn-outline-primary"
-                                                        type="submit">EXPORT</button>
-                                                </div>
                                             </form>
                                         </div>
                                         <!--END TEST-->

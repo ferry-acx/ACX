@@ -18,23 +18,8 @@ class PDFController extends Controller {
 
     public function generatePDF(Request $request){
 
-        switch($request->option){
-            case 'week':
-                $start=Carbon::now()->startOfWeek()->format('Y-m-d');
-                $end=Carbon::now()->endOfWeek()->format('Y-m-d');
-                break;
-            case 'month':
-                $start=Carbon::now()->startOfMonth()->format('Y-m-d');
-                $end=Carbon::now()->endOfMonth()->format('Y-m-d');
-                break;
-            case 'year':
-                $start=Carbon::now()->startOfYear()->format('Y-m-d');
-                $end=Carbon::now()->endOfYear()->format('Y-m-d');
-                break;
-            default:
-                $start=Carbon::now()->format('Y-m-d');
-                $end=Carbon::now()->format('Y-m-d');
-        }
+        $start = $request->startDate;
+        $end = $request->endDate;
 
         $pdf = PDF::loadView('admin.myPDF', [
 
@@ -42,7 +27,7 @@ class PDFController extends Controller {
             ->whereBetween('attendance_date', [$start, $end])
             ->groupBy(DB::raw("user_id"))
             ->get()
-        ])->setPaper('a4','portrait')->save('myPDF.pdf');
+        ,'dates'=> array($start,$end)])->setPaper('a4','portrait')->save('myPDF.pdf');
 
         \Log::info(array($start,$end));
         return $pdf->download('Attendance Report.pdf');
