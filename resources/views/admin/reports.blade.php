@@ -1,6 +1,13 @@
 @extends('layouts.main')
 @section('content')
 
+<style>
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+</style>
+
 <div class="user__dashboard container-py">
     <div class="user__dashboard__grid">
         <div class="user__dashboard__table">
@@ -19,31 +26,34 @@
                                         Employee
                                         Total
                                         Hours</h5>
-                                    <div class="table__item">
-                                        <div class="table__search">
-                                            <input class=" form-control mb-3 w-20" style="margin-right:10px"
-                                                id="myInput" type="text" placeholder="Search.." width="10%">
-                                        </div>
+                                    <div class="flex-container">
                                         <form method="get" action="{{ route('admin.generatePDF') }}">
                                             @csrf
                                             <div class="input-group">
-                                                <label class="form-label"
-                                                    style="padding-top:5px; padding-left:10px; padding-right:10px">Start
-                                                    Date</label>
-                                                <div>
+
+                                                <div style="padding-right:20px;">
+                                                    <label class="form-label"
+                                                        style="padding-top:5px;  padding-right:10px">Start
+                                                        Date</label>
                                                     <input name="startDate" id="since-start" type="date"
                                                         class="form-control mb-3 w-53" value="{{ $dates[0] }}"
                                                         autofocus />
                                                 </div>
-                                                <label style="padding-top:5px; padding-left:10px; padding-right:10px"
-                                                    class="form-label">End Date</label>
-                                                <div style="padding-right:10px;">
+
+                                                <div style="padding-right:20px;">
+                                                    <label style="padding-top:5px; padding-right:10px"
+                                                        class="form-label">End Date</label>
                                                     <input name="endDate" id="until-end" type="date"
                                                         class="form-control mb-3 w-53" value="{{ $dates[1] }}"
                                                         autofocus />
                                                 </div>
-                                                <div>
+                                                <div style="padding-right:20px;padding-top:36px">
                                                     <button type="submit" class="btn btn-warning" id="">Export</button>
+                                                </div>
+                                                <div style="padding-top:36px">
+                                                    <input class=" form-control                 mb-3 w-10"
+                                                        style="margin                     -right:10px" id="myInput"
+                                                        type="text" placeholder="Search..">
                                                 </div>
                                             </div>
                                         </form>
