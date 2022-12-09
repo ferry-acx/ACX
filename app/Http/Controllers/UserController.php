@@ -133,6 +133,25 @@ class UserController extends Controller
         }
     }
 
+
+    public function editAttendance($id){
+
+        $user = User::findOrFail($id);
+
+        if ($attendance = Attendance::where('user_id',$user->id)->first()){
+            $attendance->task = request('task');
+            $attendance->project = request('project');
+            $save = $attendance->save();
+
+            if( $save ){
+                return redirect()->back()->with('success','Updated Successfully');
+            }else{
+                return redirect()->back()->with('error','Something went wrong, failed to update');
+            }
+        }
+    }
+    
+
     /**
      * Remove the specified resource from storage.
      *

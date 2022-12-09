@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
-@include('includes.messages')
-
 @section('content')
+
 <div class="user__dashboard container-py">
     <div class="user__dashboard__grid">
         <div class="user__dashboard__item">
@@ -11,9 +10,10 @@
                     <h5 style="color: black; padding-top: 8px; padding-right: 50px;"><span id="time"></span></h5>
                 </div>
 
+                @include('includes.messages')
+
                 <div class="card">
                     <div class="card-header">
-
                         <div class="table__grid">
                             <div class="table__item">
                                 <div class="table__search">
@@ -36,6 +36,7 @@
                                         <th>Position</th>
                                         <th>Location</th>
                                         <th>Supervisor Assessment</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
 
@@ -51,6 +52,10 @@
                                         <td>{{ $attendance->user->position }} </td>
                                         <td>{{ $attendance->location }} </td>
                                         <td>{{ $attendance->supervisor_ass }} </td>
+                                        <td>
+                                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                                data-bs-target="#edit{{ $attendance->id }}">Edit</button>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -91,6 +96,59 @@
         </div>
     </div>
 </div>
+
+
+<!-- Edit-->
+@foreach( $attendances as $attendance)
+<div class="modal fade" id="edit{{ $attendance->id }}" tabindex="-1" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Edit Project and Taksa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form action="{{ route('user.editAttendance', ['id' => $attendance->id]) }}" class="text-dark text-left"
+                autocomplete="off" method="POST">
+                @csrf
+                @method('PUT')
+                <div>
+                    <div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="card-group">
+                                        <label for="project" class="col-6">Project<span class="text-red">*</label>
+                                    </div>
+
+                                    <div class="card-group">
+                                        <textarea type="text" class="col" id="project" name="project"
+                                            value="{{ $attendance->project }}" required></textarea>
+                                    </div>
+
+                                    <div class="card-group">
+                                        <label for="task" class="col-6">Tasks Done for the Day<span
+                                                class="text-red">*</label>
+                                    </div>
+
+                                    <div class="card-group">
+                                        <textarea class="col" name="task" value="{{ $attendance->task }}"
+                                            required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile__overlay__vv">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@endforeach
 
 <script type="text/javascript">
 var timeElement = document.getElementById('time');

@@ -86,7 +86,7 @@ class CreateUsersSeeder extends Seeder
                 'first_name'=>'Alfredo Jr.',
                 'last_name'=>'Sarraga',
                 'position'=>'Relevate - Designer',
-                'password'=> bcrypt('ACX-20-0010'),
+                'password'=> bcrypt('ACX-20-010'),
             ],
             [
                 'employee_id'=>'ACX-20-011',
@@ -94,7 +94,7 @@ class CreateUsersSeeder extends Seeder
                 'first_name'=>'Jellie Vey',
                 'last_name'=>'Saromines',
                 'position'=>'Project Coordinator',
-                'password'=> bcrypt('ACX-20-0011'),
+                'password'=> bcrypt('ACX-20-011'),
             ],
             [
                 'employee_id'=>'ACX-20-014',
@@ -102,7 +102,7 @@ class CreateUsersSeeder extends Seeder
                 'first_name'=>'John Paul',
                 'last_name'=>'Apa',
                 'position'=>'Digital Marketing Associate',
-                'password'=> bcrypt('ACX-20-0014'),
+                'password'=> bcrypt('ACX-20-014'),
             ],
             [
                 'employee_id'=>'ACX-20-017',

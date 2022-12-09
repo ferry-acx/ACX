@@ -40,6 +40,7 @@ Route::prefix('user')->name('user.')->group(function(){
       Route::view('/home', 'user.home')->name('home');
       Route::view('/profile', 'user.profile')->name('profile');
       Route::post('/UpdateInfo', [UserController::class, 'UpdateInfo'])->name('UpdateInfo');
+      Route::put('/dashboard/{id}',[UserController::class,'editAttendance'])->name('editAttendance');
       Route::put('/home', [UserController::class, 'store'])->name('store');
       Route::get('/dashboard',[UserController::class,'index1'])->name('dashboard');
       Route::get('/home',[UserController::class,'index2'])->name('home');
