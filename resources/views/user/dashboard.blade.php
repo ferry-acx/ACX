@@ -105,7 +105,7 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Edit Project and Taksa</h5>
+                <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Edit Project and Tasks</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -133,7 +133,7 @@
                                     </div>
 
                                     <div class="card-group">
-                                        <textarea class="col" name="task" value="{{ $attendance->task }}"
+                                        <textarea class="col" name="task" id="task" value="{{ $attendance->task }}"
                                             required></textarea>
                                     </div>
                                 </div>

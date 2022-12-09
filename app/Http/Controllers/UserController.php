@@ -136,18 +136,15 @@ class UserController extends Controller
 
     public function editAttendance($id){
 
-        $user = User::findOrFail($id);
+        $attendance = Attendance::findOrFail($id);
+        $attendance->task = request('task');
+        $attendance->project = request('project');
+        $save = $attendance->save();
 
-        if ($attendance = Attendance::where('user_id',$user->id)->first()){
-            $attendance->task = request('task');
-            $attendance->project = request('project');
-            $save = $attendance->save();
-
-            if( $save ){
-                return redirect()->back()->with('success','Updated Successfully');
-            }else{
-                return redirect()->back()->with('error','Something went wrong, failed to update');
-            }
+        if( $save ){
+            return redirect()->back()->with('success','Updated Successfully');
+        }else{
+            return redirect()->back()->with('error','Something went wrong, failed to update');
         }
     }
     
